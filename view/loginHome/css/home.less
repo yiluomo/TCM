@@ -1,0 +1,536 @@
+// 主页样式 - Less格式
+
+.content {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 252, 246, 1);
+
+    .title {
+        display: flex;
+        justify-content: center;
+        height: 50px;
+        position: relative;
+
+        span {
+            font-weight: bold;
+            font-size: 34px;
+            color: #1A3D2E;
+            text-align: center;
+            font-style: normal;
+            text-transform: none;
+            margin: 0 5px;
+        }
+
+        img {
+            width: 67px;
+            height: 47px;
+        }
+
+        &::after {
+            position: absolute;
+            top: 54px;
+            content: "";
+            width: 67px;
+            height: 2px;
+            background-color: rgba(26, 61, 46, 1);
+        }
+    }
+
+    .smallTitle {
+        text-align: center;
+        margin-top: 20px;
+
+        span {
+            font-size: 12px;
+            color: rgba(180, 165, 128, 1);
+            margin: 0 5px;
+        }
+    }
+
+    .message {
+        padding: 1px;
+        padding-top: 77px;
+        width: 100%;
+        height: 833px;
+        background-image: url(../img/1.png);
+        background-size: 100% 100%;
+
+        .messageContent {
+            position: relative;
+            margin-top: 20px;
+
+            .messageContent_box1 {
+                margin: 0 auto;
+                display: flex;
+                width: 1210px;
+                height: 450px;
+
+                >div {
+                    flex: 1;
+                    background-color: rgba(255, 252, 245, 1);
+                    margin: 0 10.5px;
+                    position: relative;
+                    width: 387px;
+                    height: 449px;
+                    background: #FFFCF5;
+                    box-shadow: 0px 4px 12px 0px rgba(210, 197, 169, 0.19);
+                    border-radius: 0px 0px 0px 0px;
+
+                    div.float {
+                        z-index: 1;
+                        margin: 0;
+                        padding: 0;
+                        width: 85px;
+                        text-align: center;
+                        color: rgba(255, 255, 255, 1);
+                        font-size: 12px;
+                        height: 30px;
+                        line-height: 30px;
+                        background-color: rgba(4, 42, 24, 0.68);
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 50%;
+                    }
+
+                    span {
+                        font-weight: bold;
+                        display: block;
+                        font-size: 18px;
+                        color: rgba(26, 61, 46, 1);
+                        margin: 20px;
+                        margin-left: 10px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+
+                    p {
+                        font-size: 12px;
+                        color: rgba(180, 165, 128, 1);
+                        margin: 0 15px;
+                        margin-bottom: 20px;
+                        line-height: 24px;
+                    }
+
+                    .news {
+                        margin-top: 40px;
+
+                        p {
+                            margin-top: 5px;
+                            margin-bottom: 10px;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 2;
+                            -webkit-box-orient: vertical;
+                            line-height: 24px;
+                        }
+
+                        span {
+                            margin: 0 15px;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                        }
+
+                        .time {
+                            font-size: 12px;
+                            color: rgba(180, 165, 128, 1);
+                            margin-left: 15px;
+                        }
+                    }
+                }
+            }
+
+            span.more {
+                margin: auto;
+                margin-top: 40px;
+                display: block;
+                width: 142px;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                font-size: 16px;
+                color: rgba(255, 255, 255, 1);
+                background-image: url(../img/Subtract.png);
+            }
+        }
+    }
+
+    .dynamicContainer {
+        padding: 1px;
+        padding-top: 77px;
+        background: #FFF6E8;
+        padding-bottom: 30px;
+
+        .activty {
+            width: 1200px;
+            margin: 0 auto;
+            margin-top: 93px;
+            padding: 38px;
+            height: 408px;
+            background: #8B4513;
+            box-shadow: 0px 4px 19px 0px rgba(219, 207, 183, 0.3);
+            position: relative;
+
+            a {
+                text-decoration: none;
+                width: 453px;
+                height: 80px;
+                line-height: 80px;
+                text-align: center;
+                font-family: PingFang SC, PingFang SC;
+                font-weight: 500;
+                font-size: 24px;
+                color: #2D4806;
+                background: #FFFFFF;
+                box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.15);
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translate(-50%, 50%);
+            }
+        }
+
+        .activty_title {
+            width: 382px;
+            height: 102px;
+            line-height: 102px;
+            background: #C47842;
+            text-align: center;
+            font-family: PingFang SC, PingFang SC;
+            font-weight: 500;
+            font-size: 24px;
+            color: #FFF6E8;
+            cursor: pointer;
+            position: relative;
+
+            span {
+                /* 确保文本在图片上方 */
+                position: relative;
+                z-index: 10;
+                display: inline-block;
+                /* 保持原始样式 */
+                font-weight: 500;
+                font-size: 24px;
+                color: #FFF6E8;
+            }
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 110%;
+                height: 100%;
+                z-index: 0;
+                /* 图片z-index低于文本 */
+            }
+
+            &.active {
+                span {
+                    color: #2D4806;
+                }
+            }
+        }
+
+        .activty_img {
+            position: absolute;
+            top: -88px;
+            left: 435px;
+            width: 100%;
+            height: 306px;
+        }
+
+        .activtyList {
+            display: flex;
+            flex-direction: column;
+            width: 1600px;
+            height: 546px;
+            margin: 0 auto;
+            margin-top: 60px;
+            background-image: url(../img/logo.png);
+            background-repeat: no-repeat;
+            background-position: center;
+
+            .box1 {
+                flex: 1;
+                width: 1600px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+
+            .box2 {
+                flex: 1;
+                width: 1600px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            a {
+                text-decoration: none;
+                display: inline-block;
+                background: #FFFFFF;
+                border-radius: 45px 45px 45px 45px;
+                border: 1px solid #8B4513;
+                font-family: PingFang SC, PingFang SC;
+                font-weight: 500;
+                font-size: 24px;
+                color: #8B4513;
+                padding: 10px 50px;
+
+                &::before {
+                    content: "";
+                    width: 16px;
+                    height: 16px;
+                    background: #8B4513;
+                    border-radius: 50%;
+                    display: inline-block;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+
+    .introduction {
+        width: 100%;
+        height: 861px;
+        background-image: url(../img/3.png);
+        background-size: 100% 100%;
+        text-align: center;
+        position: relative;
+
+        h1 {
+            position: absolute;
+            top: 77px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%px;
+            height: 45px;
+            font-family: Microsoft YaHei, Microsoft YaHei;
+            font-weight: bold;
+            font-size: 34px;
+            color: #FFFFFF;
+            text-align: center;
+            font-style: normal;
+            text-transform: none;
+        }
+
+        p {
+            position: absolute;
+            top: 164px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1200px;
+            height: 216px;
+            font-family: Microsoft YaHei, Microsoft YaHei;
+            font-weight: 400;
+            font-size: 18px;
+            color: #FFFFFF;
+            line-height: 36px;
+            text-align: center;
+            font-style: normal;
+            text-transform: none;
+        }
+
+        .achievement {
+            width: 1200px;
+            height: 102px;
+            position: absolute;
+            top: 513px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+
+            div {
+                span.text1 {
+                    margin-top: 15px;
+                    display: block;
+                    width: 300px;
+                    height: 38px;
+                    line-height: 38px;
+                    font-family: DINCond-Black, DINCond-Black;
+                    font-weight: 400;
+                    font-size: 54px;
+                    color: #FFFFFF;
+                    text-align: center;
+                    font-style: normal;
+                    text-transform: none;
+                }
+
+                span.text2 {
+                    margin-top: 15px;
+                    display: block;
+                    width: 300px;
+                    height: 36px;
+                    font-family: Microsoft YaHei, Microsoft YaHei;
+                    font-weight: 400;
+                    font-size: 18px;
+                    color: #FFFFFF;
+                    line-height: 36px;
+                    text-align: center;
+                    font-style: normal;
+                    text-transform: none;
+                }
+            }
+
+            img {
+                margin: 0 10px;
+            }
+        }
+
+        div.more {
+            position: absolute;
+            top: 725px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 142px;
+            height: 40px;
+            line-height: 40px;
+            background: #AD8275;
+            color: rgba(255, 255, 255, 1);
+            border-radius: 2px 2px 2px 2px;
+        }
+    }
+
+    .view {
+        padding-top: 30px;
+        padding-bottom: 30px;
+
+        .viewContainer {
+            width: 1200px;
+            margin: 0 auto;
+            margin-top: 15px;
+            padding: 20px;
+            background: #FFFFFF;
+            border: 1px solid #D2D2AE;
+            display: flex;
+            gap: 15px;
+
+            .left {
+                .viewItem {
+                    padding: 20px 100px;
+                    margin-bottom: 20px;
+                    background: #E3E3BA;
+                    font-family: PingFang SC, PingFang SC;
+                    font-weight: bold;
+                    font-size: 20px;
+                    color: #8A4001;
+                    cursor: pointer;
+
+                    &.active {
+                        background: #8A4001;
+                        color: #FFFFFF;
+                    }
+                }
+            }
+        }
+    }
+
+    .history {
+        padding-bottom: 50px;
+
+        .top {
+            width: 1200px;
+            margin: 0 auto;
+            margin-top: 40px;
+            display: flex;
+            gap: 50px;
+            border-bottom: 1px solid #BDA581;
+
+            .item {
+                flex: 1;
+
+                h1 {
+                    font-family: DIN, DIN;
+                    font-weight: 400;
+                    font-size: 16px;
+                    color: #8B4514;
+                    padding-left: 10px;
+                    border-left: 5px solid #8B4514;
+                    margin-bottom: 10px;
+
+                    span {
+                        font-family: PingFang SC, PingFang SC;
+                        font-weight: bold;
+                        font-size: 18px;
+                        color: #8B4514;
+                    }
+                }
+
+                .content1 {
+                    display: flex;
+                    gap: 20px;
+                    border-top: 1px solid #BDA581;
+                    padding: 20px;
+
+                    h2 {
+                        font-family: PingFang SC, PingFang SC;
+                        font-weight: bold;
+                        font-size: 20px;
+                        color: #8B4513;
+                    }
+
+                    p {
+                        margin: 10px 0;
+                        font-family: PingFang SC, PingFang SC;
+                        font-weight: 400;
+                        font-size: 16px;
+                        color: #888888;
+                    }
+
+                    button {
+                        width: 66px;
+                        height: 32px;
+                        background: #871A1A;
+                        border-radius: 0px 0px 0px 0px;
+                        font-family: PingFang SC, PingFang SC;
+                        font-weight: 400;
+                        font-size: 16px;
+                        color: #FFF6E8;
+                        border: none;
+                    }
+                }
+            }
+
+        }
+
+        .historyList {
+            width: 1200px;
+            margin: 0 auto;
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+
+            a {
+                margin-left: 15px;
+                text-decoration: none;
+                font-family: PingFang SC, PingFang SC;
+                font-weight: 400;
+                font-size: 14px;
+                color: #B98B69;
+                position: relative;
+            }
+
+            a:before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: -15px;
+                transform: translateY(-50%);
+                width: 10px;
+                height: 10px;
+                background: #871A1A;
+                border-radius: 50%;
+            }
+        }
+    }
+}

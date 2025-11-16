@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电商服务</title>
+    <script src="../../public/vue.global.js"></script>
+    <link rel="stylesheet" href="./css/banner.css">
+    <link rel="stylesheet" href="./css/breadlink.css">
+    <link rel="stylesheet" href="./css/e_commerceServices.css">
+</head>
+
+<body>
+    <div id="nav"></div>
+    <div id="app">
+        <div class="breadLink">
+            <a href="">首页</a>
+            >
+            <span>技术创新</span>
+            >
+            <a href="">电商服务</a>
+        </div>
+        <div class="banner">
+            <div class="textcontainner">
+                <div class="text1">电商服务</div>
+                <div class="text2">探索人工智能如何赋能传统中医学，推动诊断精准化、治疗个性化和传承数字化的新时代发展</div>
+                <img src="./img/TiBanner2.png" alt="">
+            </div>
+        </div>
+        <main>
+            <h1>
+                <img src="./img/es_img/hLeft.png" alt="">
+                会员订阅制
+                <img src="./img/es_img/hright.png" alt="">
+            </h1>
+            <div class="line"></div>
+            <div class="subscribeBox">
+                <div class="left">
+                    <p>加入养生会员</p>
+                    <p>享有更多权限专属优惠</p>
+                    <button>查看详情</button>
+                </div>
+                <div class="right">
+                    <div class="vip">
+                        <div class="vipText">
+                            <img src="./img/es_img/vip1.png" alt="">
+                            <p>享受名医挂号优先权</p>
+                        </div>
+                        <div class="vipText">
+                            <img src="./img/es_img/vip2.png" alt="">
+                            <p>享受名医挂号优先权</p>
+                        </div>
+                        <div class="vipText">
+                            <img src="./img/es_img/vip3.png" alt="">
+                            <p>享受名医挂号优先权</p>
+                        </div>
+                        <div class="vipText">
+                            <img src="./img/es_img/vip4.png" alt="">
+                            <p>享受名医挂号优先权</p>
+                        </div>
+                    </div>
+                    <a href="">查看会员条件及权益></a>
+                </div>
+            </div>
+            <h1>
+                <img src="./img/es_img/hLeft.png" alt="">
+                内容电商
+                <img src="./img/es_img/hright.png" alt="">
+            </h1>
+            <div class="line"></div>
+            <div class="seckill">
+                <div class="title">
+                    <img src="./img/es_img/seckill.png" alt="">
+                    <h2>秒杀</h2><span>热门，低价，买实惠</span>
+                </div>
+            </div>
+            <div class="commodityBox">
+                <img src="./img/es_img/leftArrow.png" alt="" @click="prevPage">
+                <div class="commodityContainer" :class="animationClass">
+                    <div class="commodityItem" v-for="(item, index) in currentPageItems" :key="index">
+                        <div class="text">
+                            <p>{{item.name}}</p>
+                            <span>{{item.sprice}}</span>
+                        </div>
+                        <img :src="getImg(item.img)" :alt="item.name">
+                    </div>
+                </div>
+                <img src="./img/es_img/rightArrow.png" alt="" @click="nextPage">
+            </div>
+
+            <!-- 底部分页导航 -->
+            <div class="pagination">
+                <span v-for="page in totalPages" :key="page" @click="goToPage(page)" :style="{ backgroundColor: currentPage === page ? '#E87461' : '#E0E0E0' }"></span>
+            </div>
+            <div class="contentBox">
+                <div class="title">
+                    <div class="left">
+                        <img src="./img/es_img/book.png" alt="">医书书籍
+                    </div>
+                    <div class="right">
+                        <p>
+                            <span>基础理论类</span>
+                            <span>临床应用类</span>
+                            <span>本草药物类</span>
+                            <span>针灸推拿类</span>
+                            <span>养生保健类</span>
+                            <span>医案医话类</span>
+                            <span>综合性医书</span>
+                            <span> 更多 </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="banner">
+                        <img src="./img/es_img/bookBan.png" alt="">
+                        <button>立即购买</button>
+                    </div>
+                    <div class="book" v-for="(item, index) in books.slice(0, 6)" :key="index">
+                        <img :src="getImg(item.img)" alt="">
+                        <p>{{item.summary}}</p>
+                        <span>{{item.sprice}}</span>
+                    </div>
+                    <div class="lastBook">
+                        <div class="left">
+                            <p>{{lastBook.summary}}</p>
+                            <span>{{lastBook.sprice}}</span>
+                            <button>立即购买</button>
+                        </div>
+                        <img :src="getImg(lastBook.img)" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="contentBox">
+                <div class="title">
+                    <div class="left">
+                        <img src="./img/es_img/tool.png" alt="">医疗器械
+                    </div>
+                    <div class="right">
+                        <p>
+                            <span>身体康复类</span>
+                            <span>日常保健类</span>
+                            <span>检测辅助类</span>
+                            <span>环境健康类</span>
+                            <span>养生保健类</span>
+                            <span> 更多 </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="banner">
+                        <img src="./img/es_img/bookBan.png" alt="">
+                        <button>立即购买</button>
+                    </div>
+                    <div class="book" v-for="(item, index) in books.slice(0, 6)" :key="index">
+                        <img :src="getImg(item.img)" alt="">
+                        <p>{{item.summary}}</p>
+                        <span>{{item.sprice}}</span>
+                    </div>
+                    <div class="lastBook">
+                        <div class="left">
+                            <p>{{lastBook.summary}}</p>
+                            <span>{{lastBook.sprice}}</span>
+                            <button>立即购买</button>
+                        </div>
+                        <img :src="getImg(lastBook.img)" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="contentBox">
+                <div class="title">
+                    <div class="left">
+                        <img src="./img/es_img/medicinalmaterials.png" alt="">精选药材
+                    </div>
+                    <div class="right">
+                        <p>
+                            <span>全部药材</span>
+                            <span>滋补养生</span>
+                            <span>草本植物</span>
+                            <span>动物药材</span>
+                            <span>矿物药材</span>
+                            <span>中药饮片</span>
+                            <span> 更多 </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="banner">
+                        <img src="./img/es_img/bookBan.png" alt="">
+                        <button>立即购买</button>
+                    </div>
+                    <div class="book" v-for="(item, index) in books.slice(0, 6)" :key="index">
+                        <img :src="getImg(item.img)" alt="">
+                        <p>{{item.summary}}</p>
+                        <span>{{item.sprice}}</span>
+                    </div>
+                    <div class="lastBook">
+                        <div class="left">
+                            <p>{{lastBook.summary}}</p>
+                            <span>{{lastBook.sprice}}</span>
+                            <button>立即购买</button>
+                        </div>
+                        <img :src="getImg(lastBook.img)" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <h1>
+                <img src="./img/es_img/hLeft.png" alt="">
+                品牌合作与广告
+                <img src="./img/es_img/hright.png" alt="">
+            </h1>
+            <div class="line"></div>
+
+            <div class="logo">
+                <img src="./img/es_img/logo1.png" alt="">
+                <img src="./img/es_img/logo2.png" alt="">
+                <img src="./img/es_img/logo3.png" alt="">
+                <img src="./img/es_img/logo4.png" alt="">
+                <img src="./img/es_img/logo5.png" alt="">
+            </div>
+        </main>
+    </div>
+    <div id="footer-placeholder"></div>
+</body>
+
+<script type="module" src="./js/e_commerceServices.js"></script>
+<script src="../../public/loadComponent.js"></script>
+<script>
+    // 统一使用loadComponent方法加载所有组件
+    loadComponent('../../components/nav/nav.html', 'nav');
+    loadComponent('../../components/footer/footer.html', 'footer-placeholder');
+</script>
+
+</html>

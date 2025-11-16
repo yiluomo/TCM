@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>问答广场</title>
+    <script src="../../public/vue.global.js"></script>
+    <link rel="stylesheet" href="./css/banner.css">
+    <link rel="stylesheet" href="./css/healthCheck.css">
+</head>
+
+<body>
+    <div id="app">
+        <div id="nav"></div>
+        <div class="banner">
+            <h1>问答广场</h1>
+            <h2>在这里，分享您的康复经验，交流中医调理心得，一起走向健康</h2>
+        </div>
+        <main>
+            <div class="calendar">
+                <div class="left">
+                    <h1><img src="./img/hc_img/calendar.png" alt=""> 打卡日历</h1>
+                    <div class="title"><img src="./img/hc_img/leftArrow.png" alt="">2023年7月 <img src="./img/hc_img/rightArrow.png" alt=""></div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>日</th>
+                                <th>一</th>
+                                <th>二</th>
+                                <th>三</th>
+                                <th>四</th>
+                                <th>五</th>
+                                <th>六</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="otherMonth">25</span></td>
+                                <td><span class="otherMonth">26</span></td>
+                                <td><span class="otherMonth">27</span></td>
+                                <td><span class="otherMonth">28</span></td>
+                                <td><span class="otherMonth">29</span></td>
+                                <td><span class="otherMonth">30</span></td>
+                                <td><span>1</span></td>
+                            </tr>
+                            <tr>
+                                <td><span>2</span></td>
+                                <td><span>3</span></td>
+                                <td><span>4</span></td>
+                                <td><span>5</span></td>
+                                <td><span>6</span></td>
+                                <td><span>7</span></td>
+                                <td><span>8</span></td>
+                            </tr>
+                            <tr>
+                                <td><span>9</span></td>
+                                <td><span>10</span></td>
+                                <td><span>11</span></td>
+                                <td><span>12</span></td>
+                                <td><span>13</span></td>
+                                <td><span>14</span></td>
+                                <td><span>15</span></td>
+                            </tr>
+                            <tr>
+                                <td><span>16</span></td>
+                                <td><span>17</span></td>
+                                <td><span>18</span></td>
+                                <td><span class="active">19</span></td>
+                                <td><span class="active">20</span></td>
+                                <td><span class="active">21</span></td>
+                                <td><span class="now">22</span></td>
+                            </tr>
+                            <tr>
+                                <td><span>23</span></td>
+                                <td><span>24</span></td>
+                                <td><span>25</span></td>
+                                <td><span>26</span></td>
+                                <td><span>27</span></td>
+                                <td><span>28</span></td>
+                                <td><span>29</span></td>
+                            </tr>
+                            <tr>
+                                <td><span>30</span></td>
+                                <td><span>31</span></td>
+                                <td><span class="otherMonth">1</span></td>
+                                <td><span class="otherMonth">2</span></td>
+                                <td><span class="otherMonth">3</span></td>
+                                <td><span class="otherMonth">4</span></td>
+                                <td><span class="otherMonth">5</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="bottom">
+                        <span class="filed">未打卡</span>
+                        <span class="finish">已打卡</span>
+                        <span class="today">今天</span>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="item">
+                        <h2>连续打卡</h2>
+                        <p> <span class="number">86</span> 天 </p>
+                        <p>历史最长:25天</p>
+                    </div>
+                    <div class="item">
+                        <h2>连续打卡</h2>
+                        <p> <span class="number">86</span> 天 </p>
+                        <p>历史最长:25天</p>
+                    </div>
+                    <div class="item">
+                        <h2>连续打卡</h2>
+                        <p> <span class="number">86</span> 天 </p>
+                        <p>历史最长:25天</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contentBox">
+                <div class="left">
+                    <h1><img src="./img/hc_img/text.png" alt=""> 今日养生内容 </h1>
+                    <h2>七月三十一日·大暑养生</h2>
+                    <p>大暑时节，气候炎热且雨水较多，湿热交蒸，养生应注重清热解暑、袪湿排毒。
+                        中医认为，大暑养生要注意补气养阴，同时保护脾胃功能。</p>
+                    <div class="imgBox">
+                        <img src="./img/hc_img/health1.png" alt="">
+                        <img src="./img/hc_img/health2.png" alt="">
+                    </div>
+                    <h2><img src="./img/hc_img/cook.png" alt="">推荐食谱</h2>
+                    <div class="content">
+                        <h2>绿豆百合汤</h2>
+                        <p>绿豆具有清热解毒、利尿消暑的功效;百合润肺止咳、清心安神。二者搭配，是大暑时节的理想饮品，</p>
+                        <p class="material">材料:绿豆50克，干百合10克，冰糖适量</p>
+                    </div>
+                    <h2><img src="./img/hc_img/kettle.png" alt="">养生功法</h2>
+                    <div class="content">
+                        <h2>夏季养心功</h2>
+                        <p>夏手养心，可每日清晨或傍晚练习“呵"字诀，有助于清心火、调心气。</p>
+                        <p class="material">做法:双脚自然分开站立，双手掌心相对上举，同时吸气;然后双手缓慢下落，
+                            口吐“呵“字音，同时呼气。重复7-9次。</p>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="title">
+                        <img src="./img/hc_img/clock.png" alt=""> 我的打卡记录
+                    </div>
+                    <div class="check">
+                        <h2>7月30日</h2>
+                        <p>完成了"绿豆汤制作"打卡</p>
+                        <p class="time"><img src="./img/hc_img/clock2.png" alt="">昨天07:35</p>
+                    </div>
+                    <div class="check">
+                        <h2>7月30日</h2>
+                        <p>完成了"绿豆汤制作"打卡</p>
+                        <p class="time"><img src="./img/hc_img/clock2.png" alt="">昨天07:35</p>
+                    </div>
+                    <div class="check">
+                        <h2>7月30日</h2>
+                        <p>完成了"绿豆汤制作"打卡</p>
+                        <p class="time"><img src="./img/hc_img/clock2.png" alt="">昨天07:35</p>
+                    </div>
+                    <div class="check timeout">
+                        <h2>7月30日</h2>
+                        <p>完成了"绿豆汤制作"打卡</p>
+                        <p class="time"><img src="./img/hc_img/clock2.png" alt="">昨天07:35</p>
+                    </div>
+                    <div class="check">
+                        <h2>7月30日</h2>
+                        <p>完成了"绿豆汤制作"打卡</p>
+                        <p class="time"><img src="./img/hc_img/clock2.png" alt="">昨天07:35</p>
+                    </div>
+                    <div class="check">
+                        <h2>7月30日</h2>
+                        <p>完成了"绿豆汤制作"打卡</p>
+                        <p class="time"><img src="./img/hc_img/clock2.png" alt="">昨天07:35</p>
+                    </div>
+                    <button>查看全部记录</button>
+                </div>
+            </div>
+            <div class="messageArea">
+                <h1><img src="./img/hc_img/text.png" alt=""> 打卡交流区</h1>
+                <div class="pushMessage">
+                    <img src="./img/hc_img/avatar1.png" alt="">
+                    <div class="push">
+                        <textarea name="pushInput" id="" placeholder="分享你的养生心得..."></textarea>
+                        <p><img src="./img/hc_img/picture.png" alt=""> <img src="./img/hc_img/emoil.png" alt=""> <button>发布评论</button></p>
+                    </div>
+                </div>
+                <div class="message">
+                    <img src="./img/hc_img/avatar2.png" alt="">
+                    <div class="messageContent">
+                        <div class="title">
+                            <h2 class="name">李中医</h2>
+                            <span>2小时前</span>
+                        </div>
+                        <div class="content">
+                            <p>大暑时节养生，除了饮食调理,还要注意"冬病夏治"，
+                                有慢性支气管炎、”过敏性鼻炎等疾病的朋友可以考虑贴三伏贴，效果不错。</p>
+                        </div>
+                        <p> <img src="./img/hc_img/like.png" alt=""> <span>32</span> <img src="./img/hc_img/message.png" alt=""> <span>回复</span> </p>
+                        <div class="reply">
+                            <div class="message">
+                                <img src="./img/hc_img/avatar1.png" alt="">
+                                <div class="messageContent">
+                                    <div class="title">
+                                        <h2 class="name">李中医</h2>
+                                        <span>2小时前</span>
+                                    </div>
+                                    <div class="content">
+                                        <p>大暑时节养生，除了饮食调理,还要注意"冬病夏治"，
+                                            有慢性支气管炎、”过敏性鼻炎等疾病的朋友可以考虑贴三伏贴，效果不错。</p>
+                                    </div>
+                                    <p> <img src="./img/hc_img/like.png" alt=""> <span>32</span> <img src="./img/hc_img/message.png" alt=""> <span>回复</span> </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="message">
+                    <img src="./img/hc_img/avatar1.png" alt="">
+                    <div class="messageContent">
+                        <div class="title">
+                            <h2 class="name">李中医</h2>
+                            <span>2小时前</span>
+                        </div>
+                        <div class="content">
+                            <p>大暑时节养生，除了饮食调理,还要注意"冬病夏治"，
+                                有慢性支气管炎、”过敏性鼻炎等疾病的朋友可以考虑贴三伏贴，效果不错。</p>
+                            <img src="./img/hc_img/img1.png" alt=""><img src="./img/hc_img/img2.png" alt="">
+                        </div>
+                        <p> <img src="./img/hc_img/like.png" alt=""> <span>32</span> <img src="./img/hc_img/message.png" alt=""> <span>回复</span> </p>
+                    </div>
+                </div>
+                <button>查看全部评论</button>
+            </div>
+        </main>
+        <div id="footer"></div>
+    </div>
+</body>
+<script src="../../public/loadComponent.js"></script>
+<script>
+    loadComponent("../../components/nav/nav.html", "nav");
+    loadComponent("../../components/footer/footer.html", "footer");
+</script>
+
+</html>

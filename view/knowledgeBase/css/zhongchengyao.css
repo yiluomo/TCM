@@ -1,0 +1,232 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1 {
+  font-family: HYCuSong, HYCuSong;
+  font-weight: normal;
+  font-size: 30px;
+  color: #9E2A2B;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+  margin-bottom: 36px;
+}
+.introduce {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 27px 52px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px 0px rgba(232, 214, 179, 0.48);
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 34px;
+}
+.introduce h1 {
+  text-align: left;
+  border-bottom: 1px solid #C3C3C3;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+.introduce p {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 16px;
+  color: #555555;
+  line-height: 29px;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+}
+.typeBox {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 16px;
+}
+.typeBox .typeItem {
+  flex: 1;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px 0px rgba(232, 214, 179, 0.48);
+  border-radius: 0px 0px 0px 0px;
+  padding: 25px 0;
+  border-top: 8px solid #C7C75F;
+}
+.medicalBox {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.medicalBox .title {
+  display: flex;
+  justify-content: space-between;
+}
+.medicalBox .title a {
+  text-decoration: none;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 16px;
+  color: #8B4513;
+  line-height: 24px;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+}
+.medicalBox .medicalContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.medicalBox .item {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px 0px rgba(232, 214, 179, 0.48);
+  border-radius: 0px 0px 0px 0px;
+  padding-bottom: 20px;
+}
+.medicalBox .item .text {
+  padding: 0 15px;
+}
+.medicalBox .item .text h2 {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: bold;
+  font-size: 20px;
+  color: #3E2723;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  margin-bottom: 10px;
+}
+.medicalBox .item .text p {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 16px;
+  color: #555555;
+  line-height: 24px;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.medicalBox .item .text p img {
+  margin-right: 5px;
+}
+.medicalBox .item .text button {
+  margin-top: 15px;
+  width: 100%;
+  display: block;
+  height: 44px;
+  border-radius: 0px 0px 0px 0px;
+  background-color: #FFFFFF;
+  border: 1px solid #8B4513;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 16px;
+  color: #8B4513;
+  line-height: 24px;
+  font-style: normal;
+  text-transform: none;
+}
+.guideContainer {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 21px 24px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px 0px rgba(232, 214, 179, 0.48);
+  border-radius: 0px 0px 0px 0px;
+  margin-bottom: 20px;
+}
+.guideContainer h1 {
+  text-align: left;
+  margin-bottom: 10px;
+}
+.guideContainer .listContainer {
+  display: flex;
+  gap: 30px;
+}
+.guideContainer .listContainer h2 {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: bold;
+  font-size: 20px;
+  color: #3E2723;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.guideContainer .listContainer h2 img {
+  margin-right: 5px;
+}
+.guideContainer .listContainer .list {
+  flex: 1;
+}
+.guideContainer .listContainer ul {
+  list-style: none;
+}
+.guideContainer .listContainer ul li {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 16px;
+  color: #555555;
+  line-height: 24px;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  margin-bottom: 5px;
+}
+.guideContainer .listContainer ul li img {
+  margin-right: 5px;
+}
+.question {
+  width: 1200px;
+  height: 91px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding-left: 32px;
+  padding-top: 30px;
+  padding-right: 59px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  transition: all 0.5s;
+}
+.question.active {
+  height: 365px;
+}
+.question.active .questionName img {
+  rotate: 0deg;
+}
+.question .questionName {
+  font-weight: bold;
+  font-size: 20px;
+  color: #8B5A2B;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+}
+.question .questionName img {
+  width: 24px;
+  height: 24px;
+  float: right;
+  rotate: 134deg;
+  scale: 0.8;
+}
+.question .anwser {
+  margin-top: 74px;
+  font-weight: 400;
+  font-size: 18px;
+  color: #555555;
+  line-height: 27px;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+}

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../public/vue.global.js"></script>
+    <script src="../../public/element-plus.js"></script>
+    <link rel="stylesheet" href="../../public/elementPlus.css">
+    <link rel="stylesheet" href="./css/breadlink.css">
+    <link rel="stylesheet" href="./css/banner.css">
+    <link rel="stylesheet" href="./css/classicPrescriptions.css">
+</head>
+
+<body>
+    <div id="nav"></div>
+    <div id="app">
+        <div class="breadLink">
+            <a href="">首页</a>
+            >
+            <span>全民知识库</span>
+            >
+            <a href="">经典方剂</a>
+        </div>
+        <div class="banner">
+            <div class="textcontainner">
+                <div class="text1">Herbal Medicine Encyclopedia</div>
+                <div class="text2">经典方剂</div>
+                <div class="text3">传承千年的中医药智慧结晶，精选历代医学典籍中的经典方剂</div>
+            </div>
+        </div>
+        <main>
+            <div class="title-section">
+                <h1 class="main-title">各类药剂话题</h1>
+                <h3 class="sub-title">历史话题</h3>
+            </div>
+            <div class="topicContainer">
+                <div class="title">
+                    <div class="item" v-for="item in topic" :key="item" :class="{ active: item.name === topicNow }" @click="topicNow = item.name">
+                        {{ item.name }}
+                    </div>
+                </div>
+                <div class="content">
+                    <h2>方剂组成</h2>
+                    <div class="material">
+                        <div v-for="item in materialNow.material" :key="item.name">
+                            <h3>{{ item.name }}</h3>
+                            <p>{{ item.summary }}</p>
+                        </div>
+                    </div>
+                    <h2>方剂作用</h2>
+                    <ul>
+                        <li v-for="item in materialNow.effect" :key="item.name">
+                            {{ item }}
+                        </li>
+                    </ul>
+                    <h2>理论依据</h2>
+                    <p v-for="item in materialNow.thoery" :key="item.name">{{ item }}</p>
+                </div>
+            </div>
+            <!-- <div class="topicContainer">
+                <div class="title">
+                    <div class="item active">
+                        逍遥丸疏肝解郁
+                    </div>
+                    <div class="item">
+                        六味地黄丸：滋阴补肾的典范
+                    </div>
+                    <div class="item">
+                        四君子汤：补气健脾第一方
+                    </div>
+                    <div class="item">
+                        桂枝汤：群方之魁，调和营卫
+                    </div>
+                </div>
+                <div class="content">
+                    <h2>方剂组成</h2>
+                    <div class="material">
+                        <div>
+                            <h3>柴胡</h3>
+                            <p>疏肝解郁，升举阳气</p>
+                        </div>
+                        <div>
+                            <h3>白芍</h3>
+                            <p>养血柔肝，缓急止痛</p>
+                        </div>
+                        <div>
+                            <h3>当归</h3>
+                            <p>补血活血，调经止痛</p>
+                        </div>
+                        <div>
+                            <h3>白术</h3>
+                            <p>健脾益气，燥湿利水</p>
+                        </div>
+                        <div>
+                            <h3>大枣</h3>
+                            <p>健脾宁心，利水渗湿</p>
+                        </div>
+                        <div>
+                            <h3>大枣</h3>
+                            <p>补脾益气，调和诸药</p>
+                        </div>
+                    </div>
+                    <h2>方剂作用</h2>
+                    <ol>
+                        <li>直接疏肝理气:方中柴胡为君药，性味苦平，归肝、胆经，具有肝解郁、升举阳气的作用，能够直接调节肝气，解除郁结。</li>
+                        <li>养血柔肝:当归、白芍为臣药，养血柔肝，使肝体得养，肝用正常。肝藏血，血足则肝柔，郁结自解。</li>
+                        <li>健脾益气:白术、茯苓、甘草健脾益气，培土荣木。中医认为"见肝之病，知肝传脾，当先实脾”，通过健防止肝病传变，同时脾健则气血生化有源，肝血充足。</li>
+                        <li>调和肝脾:全方配伍精当，既疏肝又健脾，使肝气调达，睥土健运，气血调和，则郁结自除。</li>
+                    </ol>
+                    <h2>理论依据</h2>
+                    <p>逍遥丸的组方思想源于《黄帝内经》"木郁达之"的治疗原则。肝属木，主疏泄，喜条达而恶抑郁。当情志不遂，肝失疏泄，导致肝气郁结，进而影响脾胃功能，形成"肝郁脾虚”证</p>
+                    <p>逍遥丸通过疏肝、健脾、养血三法并，恢复肝的疏泄功能，使气机调畅，情志舒展，故名为"逍遥"。</p>
+                </div>
+            </div> -->
+            <div class="classContainer">
+                <div class="left">
+                    <div class="typeList">
+                        <h1><img src="./img/bt-list.png" alt="" />方剂分类</h1>
+                        <div class="type" :class="{ active: item.name === classNow }" v-for="item in classData" :key="item.name" @click="changeClass(item.name)">
+                            {{ item.name }} <span>{{ item.quantity }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="itemBox">
+                        <div class="item" v-for="item in paginatedItems" :key="item.id">
+                            <img :src="getImageUrl(item.img)" alt="" />
+                            <div class="act">{{ item.act }}</div>
+                            <h1>{{ item.name }}</h1>
+                            <p>{{ item.summary }}</p>
+                            <p>
+                                <span v-for="item in item.material" :key="item">{{
+                                    item
+                                    }}</span>
+                            </p>
+                            <div class="link">
+                                <h2><img src="./img/classscript_book.png" alt="" /> {{ item.form }}</h2>
+                                <a href="">查看详情 ></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page">
+                        <!-- 删除: 分页组件 -->
+                        <el-pagination layout="prev, pager, next, jumper" :total="classitem.data.length" :page-size="4" :current-page="currentPage" @update:current-page="currentPage = $event" background />
+                    </div>
+                </div>
+            </div>
+            <h1 class="bottom">用户评价</h1>
+            <div class="evaluate">
+                <div class="item">
+                    <div class="title">
+                        <img src="./img/classscript_avatar1.png" alt="" />
+                        <div class="info">
+                            <h2>张女士</h2>
+                            <img src="./img/classscript_star.png" alt="" />
+                        </div>
+                        <div class="time">2025年9月18日</div>
+                        <p></p>
+                    </div>
+                    <p>
+                        我从小就爱生闷气，每次和家人吵架或者工作压力大时，总是把不满憋在心里，结果就是乳房胀痛、头晕目眩，甚至食欲减退。这些症状让我非常苦恼，尤其是乳房胀痛，虽然B超检查没事，但还是很担心。
+                    </p>
+                    <p>
+                        在药师指导下开始服用逍遥丸，大约一个疗程后，症状有了明显改善。乳房胀痛减轻了，头晕目眩也少了很多。最重要的是，我开始学会控制自己的情绪，不再总是生闷气。感谢逍遥丸，它不仅是一种药物，更是一种生活态度。
+                    </p>
+                </div>
+                <div class="item">
+                    <div class="title">
+                        <img src="./img/classscript_avatar2.png" alt="" />
+                        <div class="info">
+                            <h2>李先生</h2>
+                            <img src="./img/classscript_star.png" alt="" />
+                        </div>
+                        <div class="time">2025年9月18日</div>
+                        <p></p>
+                    </div>
+                    <p>
+                        先说说我补肾吃六味地黄丸这3年的变化吧:之前总感觉浑身燥热，老想干那事儿，但每次又都是草草了事，媳妇都嫌我烦...现在起步半小时，坚持久也不咋觉得累。
+                    </p>
+                    <p>
+                        精力提升:腰不酸了腿不疼了，以前歇班只想躺着，现在周末还能和朋友健身、骑行，爬山看日出!感觉又年轻了一把。夜尿减少:以前晚上总起夜上厕所，哩哩啦啦尿不尽，现在晚上基本不超夜了，可以一觉睡到天亮。
+                    </p>
+                </div>
+                <div class="item">
+                    <div class="title">
+                        <img src="./img/classscript_avatar3.png" alt="" />
+                        <div class="info">
+                            <h2>王女士</h2>
+                            <img src="./img/classscript_star.png" alt="" />
+                        </div>
+                        <div class="time">2025年9月18日</div>
+                        <p></p>
+                    </div>
+                    <p>
+                        第一次把逍遥丸塞进嘴里时，我正对着电脑屏幕上"第9版修改意见"的红色批注，指甲儿乎掐进掌心。那是我被工作和情绪缠得最紧的一段日子。每天清晨睁开眼，胸口就像压着半块湿抹布，闷得人喘不上气。
+                    </p>
+                    <p>
+                        一周后，月经悄无声息地来了，没有往常的痛经，连经量都比之前规律了不少。我以为是"碰巧"直到周末去看老中医，才知道自己根本没懂逍遥丸的真正用处。
+                    </p>
+                </div>
+            </div>
+            <div class="share">
+                <div class="left">分享您的体验</div>
+                <div class="right">
+                    <div>
+                        <h2>您的评价内容</h2>
+                        <h2>您的评分 <el-rate v-model="userRating" :max="5" :allow-half="false" :show-score="false" :void-color="'#C6D1DE'" :disabled-void-color="'#C6D1DE'" color="#FFD700" size="large" style="margin-top: 5px;" /></h2>
+                    </div>
+                    <textarea id="evaluateContent" placeholder="请输入您的评价内容"></textarea>
+                    <button>提交</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div id="footer-placeholder"></div>
+</body>
+<script type="module" src="./js/classicPrescriptions.js"></script>
+<script>
+      (function() {
+    const componentPath = '../../components/footer/footer.html'; 
+    const componentBasePath = componentPath.substring(0, componentPath.lastIndexOf('/') + 1);
+    fetch(componentPath)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.text();
+      })
+      .then(html => {
+        const adjustedHtml = html.replace(/(href|src)="\.\//g, `$1="${componentBasePath}`);
+        
+        document.getElementById('footer-placeholder').innerHTML = adjustedHtml;
+      })
+      .catch(error => {
+        console.error('There has been a problem with your fetch operation:', error);
+      });
+  })();
+  (function() {
+    const componentPath = '../../components/nav/nav.html'; 
+    const componentBasePath = componentPath.substring(0, componentPath.lastIndexOf('/') + 1);
+    fetch(componentPath)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.text();
+      })
+      .then(html => {
+        const adjustedHtml = html.replace(/(href|src)="\.\//g, `$1="${componentBasePath}`);
+        
+        document.getElementById('nav').innerHTML = adjustedHtml;
+      })
+      .catch(error => {
+        console.error('There has been a problem with your fetch operation:', error);
+      });
+  })();
+ 
+</script>
+</html>

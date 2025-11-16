@@ -1,0 +1,306 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  width: 100%;
+  height: 100%;
+  padding: 1px;
+  background: #F5F5DC;
+}
+.mainTitle {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+.mainTitle h1 {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  font-family: Microsoft YaHei, Microsoft YaHei;
+  font-weight: bold;
+  font-size: 34px;
+  color: #1A3D2E;
+  font-style: normal;
+  text-transform: none;
+}
+.mainTitle .img {
+  text-align: center;
+}
+.mainTitle h2 {
+  margin-top: 20px;
+  font-family: Microsoft YaHei, Microsoft YaHei;
+  font-weight: 400;
+  font-size: 12px;
+  color: #B4A580;
+  line-height: 24px;
+  font-style: normal;
+  text-transform: none;
+  text-align: center;
+}
+.tagContainer {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.tagContainer .tag {
+  flex: 0 0 calc(16.6% - 30px);
+  height: 45px;
+  text-align: center;
+  line-height: 45px;
+  color: #FFFFFF;
+  background: #E6C9AC;
+  border-radius: 51px 51px 51px 51px;
+  cursor: pointer;
+}
+.tagContainer .tag.active {
+  background: #8B5A2B;
+}
+.applyContainer {
+  width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 100px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.applyContainer .applyItem {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px 0px rgba(232, 214, 179, 0.48);
+  border-radius: 0px 0px 0px 0px;
+}
+.applyContainer .applyItem img {
+  width: 100%;
+}
+.applyContainer h1 {
+  margin-bottom: 5px;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: bold;
+  font-size: 20px;
+  color: #8B4513;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  padding: 0 15px;
+}
+.applyContainer p {
+  margin: 0 15px;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 16px;
+  color: #888888;
+  line-height: 24px;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.applyContainer h2 {
+  margin: 5px 0;
+  padding: 0 15px;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: bold;
+  font-size: 16px;
+  color: #555555;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+}
+.applyContainer span {
+  display: inline-block;
+  padding: 3px 8px;
+  margin-left: 15px;
+  background: #F5F5DC;
+  border-radius: 3px 3px 3px 3px;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 12px;
+  color: #555555;
+  line-height: 18px;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+}
+.applyContainer button {
+  margin: 20px 15px;
+  width: 90%;
+  height: 44px;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 16px;
+  color: #8B4513;
+  line-height: 24px;
+  font-style: normal;
+  text-transform: none;
+  display: block;
+  border-radius: 0px 0px 0px 0px;
+  background-color: #FFFFFF;
+  border: 1px solid #8B4513;
+}
+table {
+  width: 1200px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  border: none;
+}
+table thead tr {
+  height: 71px;
+  background: #8B4513;
+  box-shadow: 0px 4px 16px 0px rgba(232, 214, 179, 0.48);
+  border-radius: 0px 0px 0px 0px;
+}
+table thead tr th {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: bold;
+  font-size: 18px;
+  color: #FFFFFF;
+  font-style: normal;
+  text-transform: none;
+}
+table tr {
+  height: 62px;
+  background: #FFFFFF;
+  border-radius: 0px 0px 0px 0px;
+}
+table tr td {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 16px;
+  color: #333333;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+}
+table tr td.first {
+  color: #8B4513;
+}
+.methodBox {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 25px;
+  margin-bottom: 50px;
+}
+.methodBox .method {
+  flex: 1;
+  height: 350px;
+  display: flex;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px 0px rgba(235, 232, 210, 0.57);
+  border-radius: 0px 0px 0px 0px;
+}
+.methodBox .method > .text {
+  padding: 20px;
+}
+.methodBox .method > .text h2 {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 14px;
+  color: #947272;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+}
+.methodBox .method > .text h2 span {
+  background: #EDF7ED;
+  border-radius: 47px 47px 47px 47px;
+  padding: 5px 15px;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 14px;
+  color: #5BB35E;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  margin-right: 15px;
+}
+.methodBox .method > .text h1 {
+  margin-top: 12px;
+  margin-bottom: 14px;
+  font-family: HYCuSong, HYCuSong;
+  font-weight: normal;
+  font-size: 21px;
+  color: #966338;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+}
+.methodBox .method > .text p {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 16px;
+  color: #947272;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  margin: 10px 0;
+}
+.methodBox .method > .text h3 {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 500;
+  font-size: 16px;
+  color: #333333;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+}
+.methodBox .method > .text .doctorInfo {
+  display: flex;
+  align-items: center;
+}
+.methodBox .method > .text .doctorInfo img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+.page .el-pagination {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.page .el-pagination .btn-prev,
+.page .el-pagination .btn-next {
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    min-width: 35px;
+    height: 35px;
+}
+
+.page .el-pagination .el-pager li {
+    min-width: 35px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+    border-radius: 4px;
+    margin: 0 5px;
+}
+
+.page .el-pagination .el-pager li.is-active {
+    background-color: #8B5A2B;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.page .el-pagination .el-pager li:hover {
+    color: #8B5A2B;
+}
+
+.page .el-pagination .el-pagination__jump {
+    color: #606266;
+    background-color: rgba(246, 229, 193, 1);
+    padding: 0 12px;
+    margin-left: 10px;
+}

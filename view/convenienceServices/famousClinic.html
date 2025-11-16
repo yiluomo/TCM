@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>名馆名医</title>
+    <script src="../../public/vue.global.js"></script>
+    <link rel="stylesheet" href="./css/banner.css">
+    <link rel="stylesheet" href="./css/famousClinic.css">
+</head>
+
+<body>
+    <div id="app">
+        <div id="nav"></div>
+        <div class="banner">
+            <h1>名馆名养</h1>
+            <div class="text1">
+                <div class="left">Famous Doctor Map</div>
+                <div class="right">让好医生近在咫尺。</div>
+            </div>
+            <div class="text2">
+                <div>一键寻名医，就医少跑路。</div>
+            </div>
+        </div>
+        <main>
+            <div class="title">
+                <h1>
+                    <img src="./img/hLeft.png" alt="">
+                    名馆推荐
+                    <img src="./img/hright.png" alt="">
+                </h1>
+                <div class="line"></div>
+                <h2>精选官方认证与特色鲜明的中医馆，为您提供可靠的中医诊疗服务指引</h2>
+            </div>
+
+            <div class="clinicBox">
+                <div class="tagContainer">
+                    <div class="tag" :class="{'active': tag == chclintag}" @click="chclintag = tag" v-for="tag in cnclintags" :key="tag">{{tag}}</div>
+                </div>
+                <div class="clinicContainer">
+                    <div class="clinicItem" v-for="item in showClinic(chclintag)" :key="item.name">
+                        <img :src="getImg(item.img)" alt="">
+                        <h1>{{item.name}} <span><img src="./img/fc_img/star.png" alt="">{{item.score}}</span></h1>
+                        <p>{{item.summary}}</p>
+                        <p><span v-for="special in item.special" :key="special">{{special}}</span></p>
+                        <button>查看详情</button>
+                    </div>
+                </div>
+                <button>查看更多医馆 ></button>
+            </div>
+
+
+            <div class="title">
+                <h1>
+                    <img src="./img/hLeft.png" alt="">
+                    康复疗养院
+                    <img src="./img/hright.png" alt="">
+                </h1>
+                <div class="line"></div>
+                <h2>专注于医养结合的疗养机构，为需要长期调理、康复或养老的用户提供专业服务</h2>
+            </div>
+
+            <div class="clinicBox">
+                <div class="tagContainer">
+                    <div class="tag" :class="{'active': tag == clintag}" @click="clintag = tag" v-for="tag in clitags" :key="tag">{{tag}}</div>
+                </div>
+                <div class="clinicContainer">
+                    <div class="clinicItem" v-for="item in showClinic2(clintag)" :key="item.name">
+                        <img :src="getImg(item.img)" alt="">
+                        <h1>{{item.name}} <span><img src="./img/fc_img/star.png" alt="">{{item.score}}</span></h1>
+                        <p>{{item.summary}}</p>
+                        <p><span v-for="special in item.special" :key="special">{{special}}</span></p>
+                        <button>查看详情</button>
+                    </div>
+                </div>
+                <button>查看更多疗养机构 ></button>
+            </div>
+
+            <div class="title">
+                <h1>
+                    <img src="./img/hLeft.png" alt="">
+                    用户真实评价
+                    <img src="./img/hright.png" alt="">
+                </h1>
+                <div class="line"></div>
+                <h2>来自真实用户的体验反馈，帮助您做出更明智的选择</h2>
+            </div>
+
+            <div class="userReduce">
+                <div class="item">
+                    <div class="userInfo">
+                        <img src="./img/fc_img/avatar1.png" alt="">
+                        <div class="text">
+                            张女士<br>
+                            <img src="./img/fc_img/star2.png" alt="">
+                        </div>
+                        <span>2023-08-15</span>
+                    </div>
+                    <p>"深圳一道堂中医馆的结节调理真的很有效，我多年的甲状腺结节经过三个月的调理明显缩小了，医生非常专业，服务也很贴心"</p>
+                    <p>评价于: 深圳一道堂中医馆</p>
+                </div>
+                <div class="item">
+                    <div class="userInfo">
+                        <img src="./img/fc_img/avatar2.png" alt="">
+                        <div class="text">
+                            李先生<br>
+                            <img src="./img/fc_img/star2.png" alt="">
+                        </div>
+                        <span>2023-08-15</span>
+                    </div>
+                    <p>""上海仁瑞护理院的服务非常专业，我母亲在那里疗养期间得到了很好的照顾，中医理疗帮助她缓解了关节疼痛，工作人员都很有耐心。""</p>
+                    <p>评价于: 上海仁瑞护理院</p>
+                </div>
+                <div class="item">
+                    <div class="userInfo">
+                        <img src="./img/fc_img/avatar1.png" alt="">
+                        <div class="text">
+                            王女士<br>
+                            <img src="./img/fc_img/star2.png" alt="">
+                        </div>
+                        <span>2023-08-15</span>
+                    </div>
+                    <p>"三见堂中医馆的儿科真的很棒，我家孩子经常感冒咳嗽，在这里用中医疗法调理后体质明显改善，不用总是吃抗生素了很放心。"</p>
+                    <p>评价于: 三见堂中医馆</p>
+                </div>
+            </div>
+
+
+        </main>
+        <div id="footer"></div>
+    </div>
+</body>
+<script src="./js/famousClinic.js"></script>
+<script src="../../public/loadComponent.js"></script>
+<script>
+    loadComponent("../../components/nav/nav.html", "nav");
+    loadComponent("../../components/footer/footer.html", "footer");
+</script>
+
+</html>

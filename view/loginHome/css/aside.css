@@ -1,0 +1,66 @@
+aside{
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+}
+aside .hover{
+    width: 60px;
+    height: 60px;
+    background-color: hsl(25, 70%, 80%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+}
+aside .hover:hover{
+    background-color: rgba(139, 69, 19, 1);
+}
+aside .hover:hover .float{
+    float: right;
+    width: 150px;
+    height: 150px;
+    background-color: #111111;
+}
+
+.hover {
+    position: relative; /* 为伪元素定位提供参考 */
+}
+
+.before1::before {
+    content: '';
+    position: absolute;
+    left: -175px; /* 从父元素的左边缘开始 */
+    top: -45px;
+    width: 150px; /* 伪元素的宽度 */
+    height: 150px; /* 伪元素的高度 */
+    background-color: #AD8275; /* 伪元素的背景颜色 */
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* 添加过渡效果 */
+    /* z-index: 999; */
+    background-image: url(./img/Qcode.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+}
+.before2::before {
+    content: '19939973555';
+    position: absolute;
+    left: -175px; /* 从父元素的左边缘开始 */
+    top: 5px;
+    width: 150px; /* 伪元素的宽度 */
+    height: 50px; /* 伪元素的高度 */
+    line-height: 50px;
+    text-align: center;
+    background-color: rgba(139, 69, 19, 1); /* 伪元素的背景颜色 */
+    color: #fff;
+    font-size: 20px;
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* 添加过渡效果 */
+    border-radius: 5px;
+    /* z-index: 999; */
+}
+
+.hover:hover::before {
+    opacity: 1;
+}

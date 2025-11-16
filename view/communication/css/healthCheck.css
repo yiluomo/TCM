@@ -1,0 +1,471 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background: #F5F5DC;
+}
+main h1 {
+  display: flex;
+  align-items: center;
+  font-family: HYCuSong,
+        HYCuSong;
+  font-weight: normal;
+  font-size: 32px;
+  color: #9E2A2B;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+}
+main h1 img {
+  max-width: 38px;
+  max-height: 38px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.calendar {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+}
+.calendar .left {
+  width: 794px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px 0px rgba(232, 214, 179, 0.48);
+  border-radius: 0px 0px 0px 0px;
+  padding: 30px;
+}
+.calendar .left .title {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: bold;
+  font-size: 30px;
+  color: #000000;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  margin: 20px 0;
+}
+.calendar .left .title img {
+  max-height: 24px;
+}
+.calendar .left table {
+  width: 100%;
+}
+.calendar .left table td {
+  width: 73px;
+  height: 73px;
+  font-family: DIN, DIN;
+  font-weight: 400;
+  font-size: 30px;
+  color: #000000;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+  line-height: 36px;
+}
+.calendar .left table td span.active {
+  display: inline-block;
+  width: 73px;
+  height: 73px;
+  line-height: 73px;
+  background: #f9e8eb;
+  border-radius: 50%;
+  color: #C6233F;
+}
+.calendar .left table td span.now {
+  display: inline-block;
+  width: 73px;
+  height: 73px;
+  line-height: 73px;
+  background: #f9e8eb;
+  border-radius: 50%;
+  color: #C6233F;
+  border: 2px solid #C6233F;
+}
+.calendar .left table td span.otherMonth {
+  color: #999999;
+}
+.calendar .left .bottom {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.calendar .left .bottom span {
+  display: flex;
+  align-items: center;
+}
+.calendar .left .bottom .filed::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: #ffffff;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 1px solid #D2D6DC;
+}
+.calendar .left .bottom .finish::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: #F9E8EB;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.calendar .left .bottom .today::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: #F9E8EB;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 2px solid #C6233F;
+}
+.calendar .right {
+  width: 390px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.calendar .right .item {
+  flex: 1;
+  padding: 31px 17px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px 0px rgba(232, 214, 179, 0.48);
+  border-radius: 0px 0px 0px 0px;
+}
+.calendar .right .item h2 {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: bold;
+  font-size: 24px;
+  color: #3E2723;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  margin-bottom: 25px;
+}
+.calendar .right .item p {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 18px;
+  color: #666666;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+}
+.calendar .right .item .number {
+  font-family: DIN, DIN;
+  font-weight: bold;
+  font-size: 46px;
+  color: #C41E3A;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+}
+.contentBox {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 30px;
+  gap: 20px;
+}
+.contentBox h2 {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: bold;
+  font-size: 20px;
+  color: #8B5A2B;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+}
+.contentBox .left {
+  width: 794px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px 0px rgba(232, 214, 179, 0.48);
+  border-radius: 0px 0px 0px 0px;
+  padding: 30px;
+}
+.contentBox .left h2 {
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+.contentBox .left h2 img {
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
+  margin-right: 10px;
+  background-color: #3E2723;
+  border-radius: 50%;
+}
+.contentBox .left p {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 16px;
+  color: #555555;
+  line-height: 24px;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  margin-bottom: 20px;
+}
+.contentBox .left p.material {
+  color: #3e2723;
+  margin-bottom: 0;
+}
+.contentBox .left .imgBox {
+  display: flex;
+  gap: 33px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #CECECE;
+}
+.contentBox .left .imgBox img {
+  width: 348px;
+  max-height: 150px;
+}
+.contentBox .left .content {
+  background: #F5F5F0;
+  border-radius: 0px 0px 0px 0px;
+  padding: 16px 18px;
+}
+.contentBox .right {
+  width: 390px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px 0px rgba(232, 214, 179, 0.48);
+  border-radius: 0px 0px 0px 0px;
+  padding: 17px 21px;
+}
+.contentBox .right .title {
+  font-family: HYCuSong, HYCuSong;
+  font-weight: normal;
+  font-size: 24px;
+  color: #9E2A2B;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.contentBox .right .title img {
+  vertical-align: middle;
+  margin-right: 15px;
+}
+.contentBox .right .check {
+  padding-left: 10px;
+  border-left: 2px solid #C6233F;
+  margin-bottom: 35px;
+}
+.contentBox .right .check p {
+  margin: 10px 0;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 16px;
+  color: #555555;
+  line-height: 24px;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+}
+.contentBox .right .check p.time {
+  color: #AAAAAA;
+  display: flex;
+  align-items: center;
+}
+.contentBox .right .check p.time img {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.contentBox .right .timeout {
+  border-left: 2px solid #FBC1C2;
+}
+.contentBox .right .timeout h2 {
+  color: #FBC1C2;
+}
+.contentBox .right button {
+  width: 100%;
+  height: 53px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px 0px rgba(232, 214, 179, 0.48);
+  border-radius: 0px 0px 0px 0px;
+  border: 1px solid #9E2A2B;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: bold;
+  font-size: 16px;
+  color: #9E2A2B;
+  font-style: normal;
+  text-transform: none;
+}
+.messageArea {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 30px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px 0px rgba(232, 214, 179, 0.48);
+  border-radius: 0px 0px 0px 0px;
+  padding: 30px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+}
+.messageArea .pushMessage {
+  margin-top: 20px;
+  display: flex;
+  margin-bottom: 20px;
+}
+.messageArea .pushMessage img {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
+.messageArea .pushMessage .push {
+  width: 100%;
+}
+.messageArea .pushMessage .push textarea {
+  width: 100%;
+  height: 145px;
+  max-height: 200px;
+  border-radius: 10px 10px 10px 10px;
+  border: 1px solid #D9D9D9;
+  padding: 10px;
+}
+.messageArea .pushMessage .push p {
+  margin-top: 10px;
+}
+.messageArea .pushMessage .push p img {
+  vertical-align: middle;
+  width: auto;
+  max-height: 26px;
+}
+.messageArea .pushMessage .push p button {
+  float: right;
+  width: 142px;
+  height: 58px;
+  background: #C41E3A;
+  border-radius: 3px 3px 3px 3px;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 500;
+  font-size: 20px;
+  color: #FFFFFF;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+}
+.messageArea .message {
+  margin-top: 20px;
+  display: flex;
+  margin-bottom: 20px;
+}
+.messageArea .message img {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
+.messageArea .message .messageContent {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #E2E2E2;
+}
+.messageArea .message .messageContent .title h2 {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 26px;
+  color: #3E2723;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+}
+.messageArea .message .messageContent .title span {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 18px;
+  color: #6B7280;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+}
+.messageArea .message .messageContent .content {
+  padding: 15px 0;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 500;
+  font-size: 24px;
+  color: #263238;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+}
+.messageArea .message .messageContent .content img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
+.messageArea .message .messageContent p {
+  display: flex;
+  align-items: center;
+}
+.messageArea .message .messageContent p img {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.messageArea .message .messageContent p span {
+  margin-right: 30px;
+}
+.messageArea .message .reply {
+  margin-top: 20px;
+}
+.messageArea .message .reply img {
+  width: 50px;
+  height: 50px;
+}
+.messageArea .message .reply .messageContent {
+  border-bottom: none;
+}
+.messageArea .message .reply .messageContent .title h2 {
+  font-size: 22px;
+}
+.messageArea .message .reply .messageContent .content {
+  padding: 10px 0;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 20px;
+  color: #3E2723;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+}
+.messageArea .message .reply .messageContent p {
+  display: flex;
+  align-items: center;
+}
+.messageArea .message .reply .messageContent p img {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.messageArea .message .reply .messageContent p span {
+  margin-right: 30px;
+}
+.messageArea button {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  height: 58px;
+  border-radius: 5px 5px 5px 5px;
+  border: 1px solid #C41E3A;
+  font-family: PingFang SC, PingFang SC;
+  background-color: #FFFFFF;
+  font-weight: 500;
+  font-size: 20px;
+  color: #C41E3A;
+  font-style: normal;
+  text-transform: none;
+}

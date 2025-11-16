@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>名医专栏</title>
+    <script src="../../public/vue.global.js"></script>
+    <link rel="stylesheet" href="./css/banner.css">
+    <link rel="stylesheet" href="./css/doctorColumn.css">
+</head>
+
+<body>
+    <div id="app">
+        <div id="nav"></div>
+        <div class="banner">
+            <h1>名医专栏</h1>
+            <div class="text1">
+                <div class="left">Famous Doctors Column</div>
+                <div class="right">学专业养生与诊疗</div>
+            </div>
+            <div class="text2">
+                <div>名医专栏开讲，把中医智慧说给你听</div>
+            </div>
+        </div>
+        <main>
+            <div class="title">
+                <h1>
+                    <img src="./img/hLeft.png" alt="">
+                    中医专科分类
+                    <img src="./img/hright.png" alt="">
+                </h1>
+                <div class="line"></div>
+                <h2>中医专科涵盖广泛，针对不同的健康问题提供专业治疗方案，点击下方专科了解详情</h2>
+            </div>
+            <div class="medicaltype">
+                <div class="type">
+                    <img src="./img/dc_img/type1.png" alt="">
+                    <div class="text">中医内科</div>
+                </div>
+                <div class="type">
+                    <img src="./img/dc_img/type2.png" alt="">
+                    <div class="text">中医妇科</div>
+                </div>
+                <div class="type">
+                    <img src="./img/dc_img/type3.png" alt="">
+                    <div class="text">中医儿科</div>
+                </div>
+                <div class="type">
+                    <img src="./img/dc_img/type4.png" alt="">
+                    <div class="text">中医骨科</div>
+                </div>
+                <div class="type">
+                    <img src="./img/dc_img/type5.png" alt="">
+                    <div class="text">中医眼科</div>
+                </div>
+                <div class="type">
+                    <img src="./img/dc_img/type6.png" alt="">
+                    <div class="text">针灸推拿</div>
+                </div>
+                <div class="type">
+                    <img src="./img/dc_img/type7.png" alt="">
+                    <div class="text">食疗养生</div>
+                </div>
+                <div class="type">
+                    <img src="./img/dc_img/type8.png" alt="">
+                    <div class="text">情志调理</div>
+                </div>
+                <div class="type">
+                    <img src="./img/dc_img/type9.png" alt="">
+                    <div class="text">亚健康调理</div>
+                </div>
+                <div class="type">
+                    <img src="./img/dc_img/type10.png" alt="">
+                    <div class="text">中医减肥</div>
+                </div>
+                <div class="type">
+                    <img src="./img/dc_img/type11.png" alt="">
+                    <div class="text">中药美容</div>
+                </div>
+                <div class="type">
+                    <img src="./img/dc_img/typemore.png" alt="">
+                    <div class="text">更多专长</div>
+                </div>
+            </div>
+            <div class="title">
+                <h1>
+                    <img src="./img/hLeft.png" alt="">
+                    推荐名医
+                    <img src="./img/hright.png" alt="">
+                </h1>
+                <div class="line"></div>
+                <h2>这些是我们平台上最受欢迎的中医专家，他们在各自的专业领域有着丰富的经验和卓越的成就</h2>
+            </div>
+            <div class="doctorBox">
+                <div v-for="item in doctorList" :key="item.name" class="doctor">
+                    <img :src="getImg(item.img)" alt="">
+                    <div class="text">
+                        <div class="name">{{item.name}}</div>
+                        <div class="identity">{{item.identity}}</div>
+                        <div class="summery">{{item.summery}}</div>
+                        <div class="tag">
+                            <div v-for="tag in item.tag" :key="tag" class="tagItem">{{tag}}</div>
+                        </div>
+                        <a href="">预约专家 <img src="./img/dc_img/rightArrow.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <button>查看全部名医</button>
+            <div class="grade_box">
+                <div class="gradeContainer">
+                    <div class="grade">
+                        <h1>12500</h1>
+                        <p>满意患者</p>
+                    </div>
+                    <div class="grade">
+                        <h1>35000</h1>
+                        <p>诊断案例</p>
+                    </div>
+                    <div class="grade">
+                        <h1>28</h1>
+                        <p>专家团队</p>
+                    </div>
+                    <div class="grade">
+                        <h1>16</h1>
+                        <p>特色疗法</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="title">
+                <h1>
+                    <img src="./img/hLeft.png" alt="">
+                    诊断流程
+                    <img src="./img/hright.png" alt="">
+                </h1>
+                <div class="line"></div>
+                <h2>我们的中医诊断流程严谨规范，从初诊到复诊，为您提供全程专业服务</h2>
+            </div>
+            <div class="processContainer">
+                <div class="processContent">
+                    <div class="process">
+                        <h1>预约挂号</h1>
+                        <p>在线或电话预约，选择适合您的专家和时间，填写基本健康信息</p>
+                        <div class="num">1</div>
+                    </div>
+                    <div class="process">
+                        <h1>初诊问询</h1>
+                        <p>详细询问病史、症状、生活习惯等，建立完整的健康档案</p>
+                        <div class="num">2</div>
+                    </div>
+                    <div class="process">
+                        <h1>四诊合参</h1>
+                        <p>进行望、闻、问、切四诊，结合特色诊断方法，全面了解健康状况</p>
+                        <div class="num">3</div>
+                    </div>
+                    <div class="process">
+                        <h1>辨证分析</h1>
+                        <p>根据诊断结果，进行中医辨证，明确病因病机和证候类型</p>
+                        <div class="num">4</div>
+                    </div>
+                </div>
+                <div class="processContent">
+                    <div></div>
+                    <div class="process">
+                        <h1>诊断结论与方案</h1>
+                        <p>给出诊断结论，制定个性化治疗和调理方案，解答患者疑问</p>
+                        <div class="num">5</div>
+                    </div>
+                    <div class="process">
+                        <h1>复诊调整</h1>
+                        <p>根据治疗效果，进行复诊，调整治疗方案，直至康复</p>
+                        <div class="num">6</div>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+                <div class="title">
+                <h1>
+                    <img src="./img/hLeft.png" alt="">
+                    热门专栏文章
+                    <img src="./img/hright.png" alt="">
+                </h1>
+                <div class="line"></div>
+                <h2>阅读名医们分享的专业文章，了解中医知识，掌握健康养生之道。</h2>
+            </div>
+            <div class="sdContainer">
+                <div class="sdItem">
+                    <img src="./img/dc_img/sd1.png" alt="">
+                    <h2><img src="./img/dc_img/use.png" alt="">张仲文教授 ·  <img src="./img/dc_img/calender.png" alt="">2025-06-10 </h2>
+                    <h1>夏季养生:中医教你如何防暑祛湿</h1>
+                    <p>
+                        夏季气候炎热潮湿，容易导致人体阳气外泄、湿气内停。本文将从饮食、起居、运动等方面，为您介绍中医夏季养生的要点和方法….
+                    </p>
+                    <a href="">阅读全文 ></a>
+                </div>
+                <div class="sdItem">
+                    <img src="./img/dc_img/sd2.png" alt="">
+                    <h2><img src="./img/dc_img/use.png" alt="">李德仁教授 ·  <img src="./img/dc_img/calender.png" alt="">2025-06-15</h2>
+                    <h1>儿童脾胃虚弱的中医调理方法</h1>
+                    <p>
+                        很多家长都会遇到孩子食欲不振、消化不良等问题，这多与脾胃虚弱有关。本文将介绍如何通过中医推拿和食疗来改善儿童脾胃功能..
+                    </p>
+                    <a href="">阅读全文 ></a>
+                </div>
+                <div class="sdItem">
+                    <img src="./img/dc_img/sd3.png" alt="">
+                    <h2><img src="./img/dc_img/use.png" alt="">李明远医生 ·  <img src="./img/dc_img/calender.png" alt="">2025-09-15</h2>
+                    <h1>办公室一族必学的颈椎保健方法</h1>
+                    <p>
+                        长期久坐办公室容易导致颈椎劳损，本文将介绍几种简单有效的中医颈椎保健方法，包括穴位按摩、颈椎操和日常注意事项...
+                    </p>
+                    <a href="">阅读全文 ></a>
+                </div>
+            </div>
+            <div id="form"></div>
+        </main>
+        <div id="footer"></div>
+    </div>
+</body>
+<script src="./js/doctorColumn.js"></script>
+<script src="../../public/loadComponent.js"></script>
+<script>
+    loadComponent("../../components/form/form.html", "form");
+    loadComponent("../../components/nav/nav.html", "nav");
+    loadComponent("../../components/footer/footer.html", "footer");
+</script>
+
+</html>

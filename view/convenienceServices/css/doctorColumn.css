@@ -1,0 +1,295 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  padding: 1px;
+  background: #F5F5DC;
+}
+main .title {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 1px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+main .title h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .title .line {
+  margin: 15px auto;
+  width: 67px;
+  height: 2px;
+  background: #1A3D2E;
+}
+main .title h2 {
+  text-align: center;
+  font-family: Microsoft YaHei, Microsoft YaHei;
+  font-weight: 400;
+  font-size: 12px;
+  color: #B4A580;
+}
+main .medicaltype {
+  width: 1200px;
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 20px;
+}
+main .medicaltype .type {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 12px 0px rgba(221, 221, 146, 0.2);
+  padding: 20px;
+  gap: 10px;
+}
+main .medicaltype .type .text {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 500;
+  font-size: 16px;
+  color: #3E2723;
+}
+main .doctorBox {
+  width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+main .doctorBox .doctor {
+  background: #FFFFFF;
+  box-shadow: 0px 3px 15px 0px rgba(230, 213, 178, 0.46);
+}
+main .doctorBox .doctor div {
+  padding: 0 10px;
+}
+main .doctorBox .doctor .name {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: bold;
+  font-size: 15px;
+  color: #8B5A2B;
+}
+main .doctorBox .doctor .identity {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 500;
+  font-size: 11px;
+  color: #B77E47;
+  margin: 5px 0;
+}
+main .doctorBox .doctor .summery {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 12px;
+  color: #555555;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+main .doctorBox .doctor .tag {
+  display: flex;
+  margin: 5px 0;
+  gap: 5px;
+}
+main .doctorBox .doctor .tag div {
+  background: #EAF2EA;
+  border-radius: 27px 27px 27px 27px;
+  padding: 5px 15px;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 10px;
+  color: #458A48;
+}
+main .doctorBox .doctor a {
+  display: block;
+  padding: 0 10px;
+  vertical-align: middle;
+  text-decoration: none;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 500;
+  font-size: 11px;
+  color: #B77E47;
+  margin-bottom: 10px;
+}
+main button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 180px;
+  height: 50px;
+  background: #8B5A2B;
+  border-radius: 6px 6px 6px 6px;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 16px;
+  color: #FFFFFF;
+  border: none;
+}
+main .grade_box {
+  margin-top: 30px;
+  width: 100%;
+  height: 240px;
+  background: #8B4513;
+  border-radius: 0px 0px 0px 0px;
+}
+main .grade_box .gradeContainer {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+}
+main .grade_box .gradeContainer .grade {
+  flex: 1;
+}
+main .grade_box .gradeContainer .grade h1 {
+  margin-top: 70px;
+  font-family: DIN, DIN;
+  font-weight: bold;
+  font-size: 54px;
+  color: #D4AF37;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+}
+main .grade_box .gradeContainer .grade p {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 16px;
+  color: #FFFFFF;
+  line-height: 24px;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+}
+main .processContainer {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+main .processContainer .processContent {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 80px;
+}
+main .processContainer .processContent > div {
+  flex: 1;
+}
+main .processContainer .processContent .process {
+  padding: 22px 15px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px 0px rgba(232, 214, 179, 0.48);
+  border-radius: 0px 0px 0px 0px;
+  position: relative;
+}
+main .processContainer .processContent .process h1 {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 500;
+  font-size: 20px;
+  color: #8B5A2B;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  margin-bottom: 10px;
+}
+main .processContainer .processContent .process p {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 16px;
+  color: #555555;
+  line-height: 24px;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+}
+main .processContainer .processContent .process .num {
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  background: #8B4513;
+  border-radius: 0px 0px 0px 0px;
+  border-radius: 50%;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 500;
+  font-size: 20px;
+  color: #FFFFFF;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+  line-height: 46px;
+}
+main .sdContainer {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: flex;
+  gap: 20px;
+}
+main .sdContainer .sdItem {
+  flex: 1;
+  background: #FFFFFF;
+  box-shadow: 0px 3px 12px 0px rgba(232, 214, 179, 0.48);
+  border-radius: 0px 0px 0px 0px;
+  padding-bottom: 1px;
+}
+main .sdContainer .sdItem img {
+  width: 100%;
+  height: 225px;
+}
+main .sdContainer .sdItem h2 {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 14px;
+  color: #D3976B;
+  margin-bottom: 10px;
+}
+main .sdContainer .sdItem h2 img {
+  width: 18px;
+  height: 18px;
+  margin-right: 5px;
+}
+main .sdContainer .sdItem h1 {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: bold;
+  font-size: 20px;
+  color: #8B4513;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+main .sdContainer .sdItem p {
+  margin-left: 10px;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 16px;
+  color: #888888;
+  line-height: 19px;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  margin-bottom: 10px;
+}
+main .sdContainer .sdItem a {
+  text-decoration: none;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 16px;
+  color: #D4AF37;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  margin-left: 10px;
+}

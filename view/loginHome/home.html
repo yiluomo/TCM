@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>职业培训</title>
+    <script src="../../public/vue.global.js"></script>
+    <link rel="stylesheet" href="./css/banner.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/foot.css">
+    <link rel="stylesheet" href="./css/aside.css">
+</head>
+
+<body>
+    <div id="app">
+        <div id="nav"></div>
+        <div class="banner">
+            <a href="">了解更多</a>
+        </div>
+        <div class="content">
+            <div class="message">
+                <div class="title">
+                    <img src="./img/cloudLeft.png" alt="">
+                    <span>业内新闻</span>
+                    <img src="./img/cloudRight.png" alt="">
+                </div>
+                <div class="smallTitle">
+                    <span>弘扬中医文化、打造国民健康</span>
+                </div>
+                <div class="messageContent">
+                    <div class="messageContent_box1">
+                        <div>
+                            <div class="float">最新</div>
+                            <img src="./img/1-1.png" alt="">
+                            <span>日常饮食对血脂血压的影响有多大?</span>
+                            <p>日常饮食与心血管疾病风险之间的关系尚未被明确阐述。近日研究人员考察了日常饮食元素对血脂和血压的影响。来自北美、南美、欧洲、非洲以及亚洲18个国家的125287名参与者参加了PURE研究，通过标准调查问卷记录参与者…</p>
+                        </div>
+                        <div>
+                            <div class="float">最新</div>
+                            <img src="./img/1-2.png" alt="">
+                            <span>气虚、血虚、气血两虚调理五步走!</span>
+                            <p>气血是维持人体生命活动最基本的物质，气血充盈则身体健康，正所谓“气为血之帅，血为气之母”，气血相互影响，相互依赖，如果出现一个亏损，都会给健康带来一定影响!气虚:出现气虚者，大多数由于体内生化不足或者耗…</p>
+                        </div>
+                        <div>
+                            <div class="float">资讯</div>
+                            <div class="news">
+                                <span>中药材规范化种植研究项目实施验收标准及指导原则</span>
+                                <p>中药材生产研究是中药研究与卉发的关键环节之一。建立中药材的生产、采收、饮片加工的规范标准，对于保证中药材产品以至中成药产品具有特别重要的意义。因此，在中药现代化、国际化进程中，首先必须从中药材的质量抓…</p>
+                                <span class="time">2024-07-16</span>
+                            </div>
+                            <div class="news">
+                                <span>高血压怎么办?合理膳食调理很重要</span>
+                                <p>高血压怎么办?现在高血压的情况是很普遍的了，但是遇到血压高的情况也不用紧张，因为这是我们的高级中枢系统在调节上出现了紊乱的现象。那出现高血压怎么办呢?高血压的病因是怎样引起的?有哪几种?血压升高的原因…</p>
+                                <span class="time">2024-07-16</span>
+                            </div>
+                            <div class="news">
+                                <span>高血压怎么办?合理膳食调理很重要</span>
+                                <p>高血压怎么办?现在高血压的情况是很普遍的了，但是遇到血压高的情况也不用紧张，因为这是我们的高级中枢系统在调节上出现了紊乱的现象。那出现高血压怎么办呢?高血压的病因是怎样引起的?有哪几种?血压升高的原因…</p>
+                                <span class="time">2024-07-16</span>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="more">
+                        更多资讯
+                    </span>
+                </div>
+            </div>
+
+            <div class="dynamicContainer">
+                <div class="title">
+                    <img src="./img/cloudLeft.png" alt="">
+                    <span>中医动态·全国</span>
+                    <img src="./img/cloudRight.png" alt="">
+                </div>
+                <div class="smallTitle">
+                    <span>以仁心传医术，以良方护安康，坚守中医精诚之道</span>
+                </div>
+                <div class="activty">
+                    <div class="activty_title" v-for="item in activtys" :key="item.title" :class="{'active':activty.title==item.title}" @click="activty=item">
+                        <span>{{item.title}}</span>
+                        <img src="./img/bg.png" alt="" v-if="activty.title==item.title">
+                    </div>
+                    <div class="activty_img">
+                        <img :src="activty.img" alt="">
+                    </div>
+                    <a href="">查看详细活动详情</a>
+                </div>
+                <div class="activtyList">
+                    <div class="box1">
+                        <a href=""> {{ activtyList[0] }} </a>
+                        <a href=""> {{ activtyList[1] }} </a>
+                    </div>
+                    <div class="box2">
+                        <a href=""> {{ activtyList[2] }} </a>
+                        <a href=""> {{ activtyList[3] }} </a>
+                    </div>
+                    <div class="box1">
+                        <a href=""> {{ activtyList[4] }} </a>
+                        <a href=""> {{ activtyList[5] }} </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="introduction">
+                <h1>河南中医馆</h1>
+                <p>
+                    中医有四大经典著作，《黄帝内经》《难经》《伤寒杂病论》和《神农本草经》。其中，《黄帝内经》成书最早，内容最多，成为中国医学宝库的经
+                    典。有人说，《黄帝内经》是一本“天书”，晦涩难懂，俗话说。“半部《论语》治天下”，而真读懂《黄帝内经》，也可以“半部《内经》养人生”。《
+                    伤案论》以《汤液经法》为基础而成书。[13]《汤液经法》，相传为商代幸相伊尹所苦。《汤液经法》有32%。对汉字文化圈国家影响深远，如越南
+                    东医学[141、朝群医学 [161、日本医学、韩国韩医学[15等都是以中医为基础发展起来的。中医学以阴阳五行作为理论基础，将人体看成是气、形、
+                    神的统体，通过“塑间问切”四诊合多的方法，探求病因、病性、病位，分析病机及人体内五脏六酶、经络关节、气血津波的变化，判断那正消长，进
+                    而得出病名，归的出证型，以辨证论治原则，制定 “汗、吐、下、和、温、清、补、消”等治法，使用中药、针灸、推拿、按摩、….
+                </p>
+                <div class="achievement">
+                    <div>
+                        <span class="text1">1000+</span>
+                        <span class="text2">传承千年中医文化</span>
+                    </div>
+                    <img src="./img/Line 621.png" alt="">
+                    <div>
+                        <span class="text1">100+</span>
+                        <span class="text2">上百套中医治疗方案</span>
+                    </div>
+                    <img src="./img/Line 621.png" alt="">
+                    <div>
+                        <span class="text1">50+</span>
+                        <span class="text2">50多种阴暗杂症治疗偏方</span>
+                    </div>
+                    <img src="./img/Line 621.png" alt="">
+                    <div>
+                        <span class="text1">5000+</span>
+                        <span class="text2">超5000名病人得到了健康</span>
+                    </div>
+
+                </div>
+                <div class="more">
+                    了解更多
+                </div>
+            </div>
+
+            <div class="view">
+                <div class="title">
+                    <img src="./img/cloudLeft.png" alt="">
+                    <span>杏林视界</span>
+                    <img src="./img/cloudRight.png" alt="">
+                </div>
+                <div class="smallTitle">
+                    <span>一帧一画，解读生命密码;一镜一格，传承黄薪火，</span>
+                </div>
+                <div class="viewContainer">
+                    <div class="left">
+                        <div class="viewItem" v-for="item in viewItem" :key="item.name" :class="{'active':view.name==item.name}" @click="view=item">
+                            <span>{{item.name}}</span>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <img :src="view.img" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="history">
+                <div class="title">
+                    <img src="./img/cloudLeft.png" alt="">
+                    <span>隐世”医家口述史</span>
+                    <img src="./img/cloudRight.png" alt="">
+                </div>
+                <div class="smallTitle">
+                    <span>记录那些远离喧嚣的实践者们的独到心得。</span>
+                </div>
+                <div class="top">
+                    <div class="item">
+                        <h1> <span>中医文化 </span> Traditional Chinese Medicine Culture</h1>
+                        <div class="content1">
+                            <div class="img">
+                                <img :src=historyTop[0].img alt="">
+                            </div>
+                            <div class="text">
+                                <h2>{{historyTop[0].name}}</h2>
+                                <p>{{historyTop[0].summary}}</p>
+                                <button class="expand">展开</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <h1> <span>中医文化 </span> Traditional Chinese Medicine Culture</h1>
+                        <div class="content1">
+                            <div class="img">
+                                <img :src=historyTop[0].img alt="">
+                            </div>
+                            <div class="text">
+                                <h2>{{historyTop[0].name}}</h2>
+                                <p>{{historyTop[0].summary}}</p>
+                                <button class="expand">展开</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="historyList">
+                    <div class="item" v-for="item in historyList" :key="item.name">
+                        <a href="#">{{item.name}} &nbsp;&nbsp; {{item.time}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="footerContent">
+                <div>
+                    <div class="h1">
+                        <img src="./img/logo3.png" alt="">
+                        中医信息网
+                    </div>
+                    <p>
+                        传承中医文化，普及中医知识，提供专业、可靠的中医健康信息和交流平台，让中医智慧惠及更多人。
+                    </p>
+                    <p>
+                        <img src="./img/QQ.png" alt="">
+                        <img src="./img/WeChat.png" alt="">
+                    </p>
+                </div>
+                <div>
+                    <div class="h1">
+                        快速链接
+                    </div>
+                    <p>首页</p>
+                    <p>中医知识</p>
+                    <p>交流专区</p>
+                    <p>找医生</p>
+                    <p>健康工具</p>
+                </div>
+                <div>
+                    <div class="h1">
+                        中医分类
+                    </div>
+                    <p>中医基础理论</p>
+                    <p>中药知识</p>
+                    <p>针灸推拿</p>
+                    <p>中医养生生</p>
+                    <p>常见疾病调理</p>
+                </div>
+                <div>
+                    <div class="h1">
+                        联系我们
+                    </div>
+                    <p><img src="./img/email.png" alt="">contact@tcm-info.com</p>
+                    <p><img src="./img/phone.png" alt="">400-123-4567</p>
+                    <p><img src="./img/address2.png" alt="">北京市海淀区中医大厦</p>
+                    <div class="h1">
+                        订阅健康咨询
+                    </div>
+                    <input type="text" placeholder="您的邮箱地址"><button>订阅</button>
+                </div>
+            </div>
+            <div class="footerBottom">
+                <p>
+                    <img src="./img/cn.png" alt="">2023 中医信息网 版权所有| 京ICP备12345678号-1
+                </p>
+                <p>
+                    本网站信息仅供参考,不构成医疗建议，请谨遵医嘱
+                </p>
+            </div>
+        </footer>
+        <aside>
+            <div class="hover">
+                <img src="./img/7-2.png" alt="">
+            </div>
+            <div class="hover before1">
+                <img src="./img/7-1.png" alt="">
+            </div>
+            <div class="hover before2">
+                <img src="./img/7-3.png" alt="">
+            </div>
+            <div class="hover pageUp">
+                <img src="./img/7-4.png" alt="">
+            </div>
+        </aside>
+    </div>
+</body>
+<script src="./js/home.js"></script>
+<script src="../../public/loadComponent.js"></script>
+<script>
+    loadComponent("../../components/nav/nav.html", "nav");
+</script>
+
+</html>

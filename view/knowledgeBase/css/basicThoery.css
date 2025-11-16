@@ -1,0 +1,338 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5dc;
+  padding-bottom: 50px;
+}
+.theoryContainer {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+.theoryContainer .left {
+  width: 390px;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+.theoryContainer .left h1 {
+  font-family: HYCuSong, HYCuSong;
+  font-weight: normal;
+  font-size: 30px;
+  color: #9E2A2B;
+  text-align: left;
+  margin-bottom: 20px;
+}
+.theoryContainer .left h1 img {
+  vertical-align: middle;
+  margin-right: 10px;
+  width: 30px;
+  height: 23px;
+}
+.theoryContainer .left .typeList {
+  height: 436px;
+  padding: 15px 20px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px 0px rgba(232, 214, 179, 0.48);
+}
+.theoryContainer .left .typeList .type {
+  height: 47px;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 500;
+  font-size: 18px;
+  color: #555555;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  cursor: pointer;
+}
+.theoryContainer .left .typeList .type.active {
+  background: #EAEEE9;
+  color: #8B5A2B;
+  border-radius: 8px 8px 8px 8px;
+}
+.theoryContainer .left .typeList .type.active span {
+  background: #2D5D2A;
+  color: #ffffff;
+}
+.theoryContainer .left .introduce {
+  flex: 1;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px 0px rgba(232, 214, 179, 0.48);
+  padding: 18px 19px;
+}
+.theoryContainer .left .introduce .item {
+  background: #FFFFFF;
+  box-shadow: 0px 3px 16px 0px rgba(230, 213, 178, 0.46);
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+.theoryContainer .left .introduce .item img {
+  width: 100%;
+  height: 141px;
+}
+.theoryContainer .left .introduce .item h2 {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: bold;
+  font-size: 16px;
+  color: #8B5A2B;
+  margin: 10px 10px;
+}
+.theoryContainer .left .introduce .item p {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 13px;
+  color: #555555;
+  margin: 0 10px;
+}
+.theoryContainer .left .introduce a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: bold;
+  font-size: 14px;
+  color: #8B5A2B;
+  margin-top: 30px;
+}
+.theoryContainer .right {
+  width: 794px;
+}
+.theoryContainer .right .title {
+  height: 127px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px 0px rgba(232, 214, 179, 0.48);
+  padding: 26px 22px;
+}
+.theoryContainer .right .title h1 {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: bold;
+  font-size: 26px;
+  color: #8B5A2B;
+  margin-bottom: 10px;
+}
+.theoryContainer .right .title p {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 16px;
+  color: #555555;
+}
+.theoryContainer .right .content {
+  margin-top: 16px;
+  height: 951px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px 0px rgba(232, 214, 179, 0.48);
+  border-radius: 0px 0px 0px 0px;
+  overflow: hidden scroll;
+  padding: 20px 28px;
+}
+.classContainer {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 16px;
+}
+.classContainer .left {
+  width: 390px;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+.classContainer .left h1 {
+  font-family: HYCuSong, HYCuSong;
+  font-weight: normal;
+  font-size: 30px;
+  color: #9E2A2B;
+  text-align: left;
+  margin-bottom: 20px;
+}
+.classContainer .left h1 img {
+  vertical-align: middle;
+  margin-right: 10px;
+  width: 30px;
+  height: 23px;
+}
+.classContainer .left .typeList {
+  height: 782px;
+  padding: 15px 20px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px 0px rgba(232, 214, 179, 0.48);
+}
+.classContainer .left .typeList .type {
+  height: 47px;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 500;
+  font-size: 18px;
+  color: #555555;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  cursor: pointer;
+}
+.classContainer .left .typeList .type span {
+  display: block;
+  padding: 0 10px;
+  height: 24px;
+  line-height: 24px;
+  background: #E5E7EB;
+  border-radius: 42px 42px 42px 42px;
+}
+.classContainer .left .typeList .type.active {
+  background: #EAEEE9;
+  color: #8B5A2B;
+  border-radius: 8px 8px 8px 8px;
+}
+.classContainer .left .typeList .type.active span {
+  background: #2D5D2A;
+  color: #ffffff;
+}
+.classContainer .right {
+  width: 794px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px 0px rgba(232, 214, 179, 0.48);
+}
+.classContainer .right .itemBox {
+  height: 673px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 11px;
+  padding: 18px;
+}
+.classContainer .right .itemBox .item {
+  position: relative;
+  flex: 1;
+}
+.classContainer .right .itemBox .item img {
+  width: 100%;
+  height: 210px;
+}
+.classContainer .right .itemBox .item .title {
+  height: 29px;
+  position: absolute;
+  width: 100%;
+  background: #000000;
+  opacity: 0.5;
+  top: 180px;
+  font-size: 18px;
+  color: #ffffff;
+  text-align: center;
+}
+.classContainer .right .itemBox .item .act {
+  position: absolute;
+  padding: 10px 30px;
+  background: #BA7F59;
+  border-radius: 33px 33px 33px 33px;
+  font-family: Microsoft YaHei, Microsoft YaHei;
+  font-weight: 400;
+  font-size: 11px;
+  color: #FFFFFF;
+  text-align: center;
+  top: 8px;
+  left: 7px;
+}
+.classContainer .right .itemBox .item p {
+  font-family: Microsoft YaHei, Microsoft YaHei;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 180%;
+  color: #AAAAAA;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.classContainer .right .itemBox .item button {
+  width: 246px;
+  height: 36px;
+  background: #8B5A2B;
+  border-radius: 3px 3px 3px 3px;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 500;
+  font-size: 13px;
+  color: #FFFFFF;
+  border: none;
+  margin-top: 15px;
+}
+.classContainer .right .page :deep(.el-pagination) {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+.classContainer .right .page :deep(.el-pagination) .btn-prev,
+.classContainer .right .page :deep(.el-pagination) .btn-next {
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  min-width: 35px;
+  height: 35px;
+}
+.classContainer .right .page :deep(.el-pagination) .el-pager li {
+  min-width: 35px;
+  height: 35px;
+  line-height: 35px;
+  font-size: 14px;
+  border-radius: 4px;
+  margin: 0 5px;
+}
+.classContainer .right .page :deep(.el-pagination) .el-pager li.is-active {
+  background-color: #8B5A2B;
+  color: #fff;
+  border-radius: 4px;
+}
+.classContainer .right .page :deep(.el-pagination) .el-pager li:hover {
+  color: #8B5A2B;
+}
+.classContainer .right .page :deep(.el-pagination) .el-pagination__jump {
+  color: #606266;
+  background-color: #f6e5c1;
+  padding: 0 12px;
+  margin-left: 10px;
+}
+.page .el-pagination {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.page .el-pagination .btn-prev,
+.page .el-pagination .btn-next {
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    min-width: 35px;
+    height: 35px;
+}
+
+.page .el-pagination .el-pager li {
+    min-width: 35px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+    border-radius: 4px;
+    margin: 0 5px;
+}
+
+.page .el-pagination .el-pager li.is-active {
+    background-color: #8B5A2B;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.page .el-pagination .el-pager li:hover {
+    color: #8B5A2B;
+}
+
+.page .el-pagination .el-pagination__jump {
+    color: #606266;
+    background-color: rgba(246, 229, 193, 1);
+    padding: 0 12px;
+    margin-left: 10px;
+}

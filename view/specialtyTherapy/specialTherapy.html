@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../public/vue.global.js"></script>
+    <script src="../../public/element-plus.js"></script>
+    <link rel="stylesheet" href="../../public/elementPlus.css">>
+    <link rel="stylesheet" href="./css/breadlink.css">
+    <link rel="stylesheet" href="./css/banner.css">
+    <link rel="stylesheet" href="./css/specialTherapy.css">
+</head>
+
+<body>
+      <div id="nav"></div>
+    <div id="app">
+        
+        <div class="breadLink">
+            <a href="">首页</a>
+            >
+            <span>全民知识库</span>
+            >
+            <a href="">中医易学堂</a>
+        </div>
+        <div class="banner">
+            <div class="textcontainner">
+                <div class="text1">中国特色疗法</div>
+                <div class="text2">传承千年智慧，融合现代科技，探索中医独特的治疗方法，为您的健康保驾护航</div>
+            </div>
+        </div>
+        <main>
+            <div class="mainTitle">
+                <h1><img src="./img/cloudLeft.png" alt=""> 传统智慧 现代应用 <img src="./img/cloudRight.png" alt=""></h1>
+                <div class="img"><img src="./img/st_line.png" alt=""></div>
+                <h2>中医特色疗法是中华民族智慧的结晶，经过数千年的实践与发展，形成了一套完整而独特的治疗体系。以下为您介绍几种常见的特色疗法。</h2>
+            </div>
+            <div class="tagContainer">
+                <div class="tag" v-for="item in tags" :key="item.id" :class="{'active': item === tag}" @click="changeTag(item)">{{ item }}</div>
+            </div>
+            <div class="applyContainer">
+                <div class="applyItem" v-for="therapy in paginatedTherapy" :key="therapy.id">
+                    <img :src="therapy.image" :alt="therapy.name">
+                    <h1>{{ therapy.name }}</h1>
+                    <p>{{ therapy.description }}</p>
+                    <h2>主要功效：</h2>
+                    <span v-for="(benefit, index) in therapy.benefits" :key="index">{{ benefit }}</span>
+                    <button>
+                        了解更多
+                    </button>
+                </div>
+            </div>
+            <div class="page">
+                <el-pagination layout="total,prev, pager, next, jumper" :total="filteredTherapy.length" :page-size="6" v-model:current-page="currentPage" background />
+            </div>
+            <div class="mainTitle">
+                <h1><img src="./img/cloudLeft.png" alt=""> 疗法对比与适用 <img src="./img/cloudRight.png" alt=""></h1>
+                <div class="img"><img src="./img/st_line.png" alt=""></div>
+                <h2>不同的中医疗法有其独特的优势和适用范围，了解它们的特点有助于您选择最适合自己的治疗方式。</h2>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>疗法类型</th>
+                        <th>主要作用</th>
+                        <th>适用症状</th>
+                        <th>疗程特点</th>
+                        <th>注意事项</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="first">针灸疗法</td>
+                        <td>调节气血、疏通经络</td>
+                        <td>疼痛、失眠、消化问题</td>
+                        <td>10-15次为一疗程</td>
+                        <td>孕妇、出血倾向者慎用</td>
+                    </tr>
+                    <tr>
+                        <td class="first">推拿按摩</td>
+                        <td>放松肌肉、改善循环</td>
+                        <td>肌肉酸痛、疲劳、紧张</td>
+                        <td>可按需进行，每周2-3次</td>
+                        <td>皮肤损伤处不宜进行</td>
+                    </tr>
+                    <tr>
+                        <td class="first">中药熏蒸</td>
+                        <td>祛风除湿、活血通络</td>
+                        <td>关节炎、皮肤病、疲劳</td>
+                        <td>每次20-30分钟每日1次</td>
+                        <td>高血压、心脏病患者慎用</td>
+                    </tr>
+                    <tr>
+                        <td class="first">拔罐疗法</td>
+                        <td>驱寒祛湿、疏通经络</td>
+                        <td>肌肉疼痛、感冒、疲劳</td>
+                        <td>每次10-15分钟，间隔3-5天</td>
+                        <td>皮肤敏感、出血倾向者慎用</td>
+                    </tr>
+                    <tr>
+                        <td class="first">艾灸疗法</td>
+                        <td>温经散寒、扶阳固脱</td>
+                        <td>虚寒体质、关节冷痛、月经不调</td>
+                        <td>每次15-30分钟，每周2-3次</td>
+                        <td>热性体质、孕妇慎用</td>
+                    </tr>
+                    <tr>
+                        <td class="first">刮痧疗法</td>
+                        <td>排毒解表、疏通经络</td>
+                        <td>感冒、中暑、肌肉酸痛</td>
+                        <td>每次15-20分钟，间隔7-10天</td>
+                        <td>热性体质、孕妇慎用</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="mainTitle">
+                <h1><img src="./img/cloudLeft.png" alt=""> 专家推荐疗法 <img src="./img/cloudRight.png" alt=""></h1>
+                <div class="img"><img src="./img/st_line.png" alt=""></div>
+                <h2>根据不同体质和症状，中医专家为您推荐最适合的特色疗法组合</h2>
+            </div>
+            <div class="methodBox">
+                <div class="method">
+                    <img src="./img/st_method1.png" alt="">
+                    <div class="text">
+                        <h2>
+                            <span>办公室综合症</span>
+                            推荐疗程: 4周
+                        </h2>
+                        <h1>颈椎腰椎养护方案</h1>
+                        <p>针对长期久坐、缺乏运动引起的颈肩腰背痛、疲劳乏力等症状，结合多种疗法综合调理。</p>
+                        <h3>推荐疗法组合:</h3>
+                        <p><img src="./img/st_star.png" alt="">推拿按摩+针灸:每周2次，缓解肌肉紧张</p>
+                        <p><img src="./img/st_star.png" alt="">艾灸:每周1次，温通经络，改善循环</p>
+                        <p><img src="./img/st_star.png" alt="">中药熏蒸:每两周1次，缓解疲劳，放松身心</p>
+                        <div class="doctorInfo">
+                            <img src="./img/st_avatar.png" alt="">
+                            <div class="text">
+                                <h3>李彦明 主任医师</h3>
+                                <h2>中医推拿科 · 30年经验</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="method">
+                    <img src="./img/st_method2.png" alt="">
+                    <div class="text">
+                        <h2>
+                            <span>亚健康调理</span>
+                            推荐疗程: 8周
+                        </h2>
+                        <h1>体质调理方案</h1>
+                        <p>针对失眠多梦、免疫力低下、易疲劳等亚健康状态，从整体调理，改善体质，增强免疫力。</p>
+                        <h3>推荐疗法组合:</h3>
+                        <p><img src="./img/st_star.png" alt="">针灸:每周1次，调节神经，改善睡眠</p>
+                        <p><img src="./img/st_star.png" alt="">艾灸:每周2次，温补元气，增强免疫</p>
+                        <p><img src="./img/st_star.png" alt="">拔罐:每两周1次，排毒祛湿，改善循环</p>
+                        <div class="doctorInfo">
+                            <img src="./img/st_avatar.png" alt="">
+                            <div class="text">
+                                <h3>王秀兰 副主任医师</h3>
+                                <h2>中医内科 · 25年经验</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <div id="form"></div>
+        </main>
+    </div>
+    <div id="footer-placeholder"></div>
+</body>
+<script type="module" src="./js/specialTherapy.js"></script>
+<script>
+  (function() {
+    const componentPath = '../../components/footer/footer.html'; 
+    const componentBasePath = componentPath.substring(0, componentPath.lastIndexOf('/') + 1);
+    fetch(componentPath)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.text();
+      })
+      .then(html => {
+        const adjustedHtml = html.replace(/(href|src)="\.\//g, `$1="${componentBasePath}`);
+        
+        document.getElementById('footer-placeholder').innerHTML = adjustedHtml;
+      })
+      .catch(error => {
+        console.error('There has been a problem with your fetch operation:', error);
+      });
+  })();
+  (function() {
+    const componentPath = '../../components/nav/nav.html'; 
+    const componentBasePath = componentPath.substring(0, componentPath.lastIndexOf('/') + 1);
+    fetch(componentPath)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.text();
+      })
+      .then(html => {
+        const adjustedHtml = html.replace(/(href|src)="\.\//g, `$1="${componentBasePath}`);
+        
+        document.getElementById('nav').innerHTML = adjustedHtml;
+      })
+      .catch(error => {
+        console.error('There has been a problem with your fetch operation:', error);
+      });
+  })();
+  (function() {
+    const componentPath = '../../components/form/form.html'; 
+    const componentBasePath = componentPath.substring(0, componentPath.lastIndexOf('/') + 1);
+    fetch(componentPath)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.text();
+      })
+      .then(html => {
+        const adjustedHtml = html.replace(/(href|src)="\.\//g, `$1="${componentBasePath}`);
+        
+        document.getElementById('form').innerHTML = adjustedHtml;
+      })
+      .catch(error => {
+        console.error('There has been a problem with your fetch operation:', error);
+      });
+  })();
+</script>
+</html>

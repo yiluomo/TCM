@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>偏方妙治</title>
+    <script src="../../public/vue.global.js"></script>
+    <link rel="stylesheet" href="./css/banner.css">
+    <link rel="stylesheet" href="./css/homeRemedy.css">
+</head>
+
+<body>
+    <div id="app">
+        <div id="nav"></div>
+        <div class="banner">
+            <h1>偏方妙治</h1>
+            <div class="text1">
+                <div class="left">Home remedy</div>
+                <div class="right">对症妙治更贴心</div>
+            </div>
+            <div class="text2">
+                <div>偏方藏妙治，中医护安康</div>
+            </div>
+        </div>
+        <main>
+            <div class="title">
+                <h1>
+                    <img src="./img/hLeft.png" alt="">
+                    偏方分类
+                    <img src="./img/hright.png" alt="">
+                </h1>
+                <div class="line"></div>
+                <h2>根据不同病症和功效，为您精选分类清晰的中医偏方，方便快速查找适合您的健康解决方案</h2>
+            </div>
+            <div class="typeBox">
+                <div class="typetag">
+                    <span v-for="item in tags" :key="item" @click="changeTag(item)" :class="{'active': item === tag}">{{ item }}</span>
+                </div>
+                <div class="remedyContainer">
+                    <div class="remedyItem" v-for="item in filteredRemedies" :key="item.id">
+                        <img :src="getImg(item.img)" alt="">
+                        <div class="remedyText">
+                            <h2>
+                                {{ item.name }}
+                            </h2>
+                            <p>
+                                {{ item.summary }}
+                            </p>
+                            <div>
+                                <span><img src="./img/hr_img/look.png" alt="">{{ item.look }}</span>
+                                <a href="">查看全部<img src="./img/hr_img/arrow.png" alt=""></a>
+                            </div>
+                        </div>
+                        </img>
+                    </div>
+                </div>
+            </div>
+            <div class="title">
+                <h1>
+                    <img src="./img/hLeft.png" alt="">
+                    热门偏方
+                    <img src="./img/hright.png" alt="">
+                </h1>
+                <div class="line"></div>
+                <h2>用户验证、专家推荐的高人气偏方，安全有效，备受信赖</h2>
+            </div>
+            <div class="popularRemedies">
+                <div class="remedyCard">
+                    <span class="tag">感冒咳嗽</span>
+                    <h3>生姜红糖水治风寒感冒</h3>
+                    <p><img src="./img/hr_img/true.png" alt="">生姜3-5片，红糖适量，加水煮沸后饮用</p>
+                    <p><img src="./img/hr_img/true.png" alt="">每日2-3次，趁热饮用，盖被发汗效果更佳</p>
+                    <div>
+                        <span><img src="./img/hr_img/user.png" alt=""> 张医师推荐</span>
+                        <a href="#">查看详情 <img src="./img/hr_img/arrow.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="remedyCard">
+                    <span class="tag">失眠多梦</span>
+                    <h3>酸枣仁粥安神助眠</h3>
+                    <p><img src="./img/hr_img/true.png" alt=""> 酸枣仁15克，粳米100克，冰糖适量</p>
+                    <p><img src="./img/hr_img/true.png" alt=""> 酸枣仁研末，与粳米同煮睡前1小时食用</p>
+                    <div>
+                        <span><img src="./img/hr_img/user.png" alt=""> 李医师推荐</span>
+                        <a href="#">查看详情 <img src="./img/hr_img/arrow.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="remedyCard">
+                    <span class="tag">消化调理 </span>
+                    <h3>陈皮山楂茶健脾NLS</h3>
+                    <p><img src="./img/hr_img/true.png" alt=""> 陈皮5克，山楂干10克，冰糖适量</p>
+                    <p><img src="./img/hr_img/true.png" alt=""> 沸水冲泡，代茶饮，饭后半小时饮用效果佳</p>
+                    <div>
+                        <span><img src="./img/hr_img/user.png" alt=""> 王医师推荐</span>
+                        <a href="#">查看详情 <img src="./img/hr_img/arrow.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <button class="tomore">查看更多偏方</button>
+            <div class="title">
+                <h1>
+                    <img src="./img/hLeft.png" alt="">
+                    中医科普
+                    <img src="./img/hright.png" alt="">
+                </h1>
+                <div class="line"></div>
+                <h2>了解中医基础知识，正确认识偏方的应用，科学养生保健</h2>
+            </div>
+            <div class="popularizationBox">
+                <div class="popularizationItem">
+                    <img src="./img/hr_img/img4.png" alt="">
+                    <div class="text">
+                        <span>科普知识</span>
+                        <h1>生姜红糖水治风寒感冒</h1>
+                        <p>中医偏方源远流长，但使用时需遵循辨证施治原则，不可百目套用。本文介绍偏方使用的五大原则，帮助您安全有效地运用民间智慧.</p>
+                        <a href="">阅读全文 <img src="./img/hr_img/arrow.png" alt=""></img></a>
+                    </div>
+                </div>
+                <div class="popularizationItem">
+                    <img src="./img/hr_img/img4.png" alt="">
+                    <div class="text">
+                        <span>使用技巧</span>
+                        <h1>常见中药材的鉴别方法</h1>
+                        <p>中药材的质量直接影响偏方效果，学会简单的鉴别方法能帮助您选择优质药材。本文介绍10种常用中药材的鉴别技巧，让您轻松避开劣质药材...</p>
+                        <a href="">阅读全文 <img src="./img/hr_img/arrow.png" alt=""></img></a>
+                    </div>
+                </div>
+                <div class="popularizationItem">
+                    <img src="./img/hr_img/img4.png" alt="">
+                    <div class="text">
+                        <span>使用技巧</span>
+                        <h1>常见中药材的鉴别方法</h1>
+                        <p>中药材的质量直接影响偏方效果，学会简单的鉴别方法能帮助您选择优质药材。本文介绍10种常用中药材的鉴别技巧，让您轻松避开劣质药材...</p>
+                        <a href="">阅读全文 <img src="./img/hr_img/arrow.png" alt=""></img></a>
+                    </div>
+                </div>
+                <div class="popularizationItem">
+                    <img src="./img/hr_img/img4.png" alt="">
+                    <div class="text">
+                        <span>养生之道</span>
+                        <h1>中医四季养生的核心原则</h1>
+                        <p>中医认为人与自然相通，四季养生应顺应自然规律。本文详解春夏秋冬四季的养生重点，结合对应偏方，帮助您根据季节变化调整养生方案..</p>
+                        <a href="">阅读全文 <img src="./img/hr_img/arrow.png" alt=""></img></a>
+                    </div>
+                </div>
+            </div>
+            <div class="title">
+                <h1>
+                    <img src="./img/hLeft.png" alt="">
+                    专家精选偏方
+                    <img src="./img/hright.png" alt="">
+                </h1>
+                <div class="line"></div>
+                <h2>了解中医基础知识，正确认识偏方的应用，科学养生保健</h2>
+            </div>
+            <div class="starBox">
+                <div class="starItem">
+                    <img src="./img/hr_img/img5.png" alt="">
+                    <div class="text">
+                        <span>失眠</span>
+                        <h1>艾叶泡脚治失眠</h1>
+                        <p>艾叶30克，煮水泡脚20分钟，每晚睡前使用，坚持1-2周可见效</p>
+                        <div>
+                            <span><img src="./img/hr_img/good.png" alt=""> 1286人推荐</span>
+                            <span><img src="./img/hr_img/message.png" alt=""> 1286人推荐</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="starItem">
+                    <img src="./img/hr_img/img6.png" alt="">
+                    <div class="text">
+                        <span>失眠</span>
+                        <h1>川芎白芷治头痛</h1>
+                        <p>川芎10克，白芷6克，煎汤服用，每日1剂，分2次服用，适用于血管性头痛</p>
+                        <div>
+                            <span><img src="./img/hr_img/good.png" alt=""> 1286人推荐</span>
+                            <span><img src="./img/hr_img/message.png" alt=""> 1286人推荐</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div id="footer"></div>
+    </div>
+</body>
+<script src="./js/homeRemedy.js"></script>
+<script src="../../public/loadComponent.js"></script>
+<script>
+    loadComponent("../../components/nav/nav.html", "nav");
+    loadComponent("../../components/footer/footer.html", "footer");
+</script>
+
+</html>

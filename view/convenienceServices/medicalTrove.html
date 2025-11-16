@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>药材宝库</title>
+    <script src="../../public/vue.global.js"></script>
+    <link rel="stylesheet" href="../../public/elementPlus.css">
+    <script src="../../public/element-plus.js"></script>
+
+    <link rel="stylesheet" href="./css/banner.css">
+    <link rel="stylesheet" href="./css/medicalTrove.css">
+</head>
+
+<body>
+    <div id="app">
+        <div id="nav"></div>
+        <div class="banner">
+            <h1>药材宝库</h1>
+            <div class="text1">
+                <div class="left">Encyclopedia</div>
+                <div class="right">中医药材百科全知道</div>
+            </div>
+            <div class="text2">
+                <div>查药材、学知识，中医百科伴你识本草</div>
+            </div>
+        </div>
+        <main>
+            <div class="mainContainer">
+                <div class="search">
+                    <input type="text" v-model="searchKeyword" placeholder="搜索药材">
+                    <select v-model="selectedTime" name="time" id="">
+                        <option value="">时间不限</option>
+                        <option value="2025.07">2025.07</option>
+                        <option value="2025.08">2025.08</option>
+                        <option value="2025.09">2025.09</option>
+                        <option value="2025.10">2025.10</option>
+                    </select>
+                    <select v-model="selectedCategory" name="category" id="">
+                        <option value="">药材分类</option>
+                        <option value="补益类">补益类</option>
+                        <option value="清热类">清热类</option>
+                        <option value="利水掺湿">利水掺湿</option>
+                        <option value="解衣类">解衣类</option>
+                        <option value="消食类">消食类</option>
+                        <option value="花类">花类</option>
+                        <option value="展示全部">展示全部</option>
+                    </select>
+                    <button class="filter" @click="handleFilter">
+                        <img src="./img/mt_img/filter.png" alt="">&nbsp;
+                        筛选
+                    </button>
+                </div>
+                <div class="medicalBox">
+                    <div v-for="item in paginatedData" :key="item.id" class="medicalItem">
+                        <img :src="item.img" :alt="item.name">
+                        <h1>{{ item.name }}</h1>
+                        <p>{{ item.description }}</p>
+                        <p>
+                            <img src="./img/mt_img/calender.png" alt=""><span>{{ item.time }}</span>
+                            <img src="./img/mt_img/write.png" alt=""><span>{{ item.category }}</span>
+                        </p>
+                        <button>
+                            {{ item.name }}
+                        </button>
+                    </div>
+                    <!-- 空状态显示 -->
+                    <div v-if="paginatedData.length === 0" class="empty-state">
+                        <p>暂无符合条件的药材信息</p>
+                    </div>
+                </div>
+                <div class="demo-pagination-block" v-if="total > 0">
+                    <el-pagination v-model:current-page="currentPage4" v-model:page-size="pageSize4" :page-sizes="[4, 8, 12, 16]" :size="size" :disabled="disabled" :background="background" layout="total, sizes, prev, pager, next, jumper" :total="total" @size-change="handleSizeChange" @current-change="handleCurrentChange" />
+                </div>
+            </div>
+            <div class="title">
+                <h1>
+                    <img src="./img/hLeft.png" alt="">
+                    经典配伍推荐
+                    <img src="./img/hright.png" alt="">
+                </h1>
+                <div class="line"></div>
+                <h2>中医配伍讲究"药有个性之专长，方有合群之妙用"，精选临床常用经典配伍</h2>
+            </div>
+            <div class="recipeBox">
+                <div class="recipeItem">
+                    <div class="recipe">
+                        <div class="recipeImg">
+                            <img src="./img/mt_img/medical1.png" alt="">
+                            <span>人参</span>
+                        </div>
+                        +
+                        <div class="recipeImg">
+                            <img src="./img/mt_img/medical2.png" alt="">
+                            <span>黄芪</span>
+                        </div>
+                    </div>
+                    <div class="recipeText">
+                        <h2>
+                            补气双绝
+                        </h2>
+                        <p>
+                            人参大补元气，黄芪补气升阳，二者配伍，增强补气功效，适用于气虚乏力、气短懒言等症。
+                        </p>
+                        <div>
+                            <span>适用证: 气虚体质</span>
+                            <a href="">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="recipeItem">
+                    <div class="recipe">
+                        <div class="recipeImg">
+                            <img src="./img/mt_img/medical3.png" alt="">
+                            <span>当归</span>
+                        </div>
+                        +
+                        <div class="recipeImg">
+                            <img src="./img/mt_img/medical4.png" alt="">
+                            <span>川芎</span>
+                        </div>
+                    </div>
+                    <div class="recipeText">
+                        <h2>
+                            补血活血
+                        </h2>
+                        <p>
+                            当归补血活血，川芎活血行气，二者配伍，共奏补血活血之功，适用于血虚血瘀诸症。
+                        </p>
+                        <div>
+                            <span>适用证: 血虚血瘀</span>
+                            <a href="">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="recipeItem">
+                    <div class="recipe">
+                        <div class="recipeImg">
+                            <img src="./img/mt_img/medical5.png" alt="">
+                            <span>白术</span>
+                        </div>
+                        +
+                        <div class="recipeImg">
+                            <img src="./img/mt_img/medical6.png" alt="">
+                            <span>茯苓</span>
+                        </div>
+                        +
+                        <div class="recipeImg">
+                            <img src="./img/mt_img/medical7.png" alt="">
+                            <span>甘草</span>
+                        </div>
+                    </div>
+                    <div class="recipeText">
+                        <h2>
+                            健脾祛湿
+                        </h2>
+                        <p>
+                            白术健脾燥湿，茯苓利水渗湿，甘草益气补中，三者配伍，共奏健牌祛湿之功。
+                        </p>
+                        <div>
+                            <span>适用证: 脾虚湿盛</span>
+                            <a href="">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="tomore">
+                查看更多配伍方案
+            </button>
+        </main>
+        <div id="footer"></div>
+    </div>
+</body>
+<script src="./js/medicalTrove.js"></script>
+<script src="../../public/loadComponent.js"></script>
+<script>
+    loadComponent("../../components/nav/nav.html", "nav");
+    loadComponent("../../components/footer/footer.html", "footer");
+</script>
+
+</html>

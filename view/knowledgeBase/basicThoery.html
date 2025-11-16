@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>中医易学堂</title>
+  <script src="../../public/vue.global.js"></script>
+  <script src="../../public/element-plus.js"></script>
+  <link rel="stylesheet" href="../../public/elementPlus.css">
+  <link rel="stylesheet" href="./css/breadlink.css">
+  <link rel="stylesheet" href="./css/banner.css">
+  <link rel="stylesheet" href="./css/basicThoery.css">
+</head>
+
+<body>
+  <div id="nav"></div>
+  <div id="app">
+    <div class="breadLink">
+      <a href="">首页</a>
+      >
+      <span>全民知识库</span>
+      >
+      <a href="">中医易学堂</a>
+    </div>
+    <div class="banner">
+      <div class="textcontainner">
+        <div class="text1">China Yi Study Hall</div>
+        <div class="text2">中医易学堂</div>
+        <div class="text3">探索中医理论的核心思想，理解人与自然的和谐统一，认识生命活动的基本规律</div>
+      </div>
+    </div>
+    <main>
+      <!-- 理论分类区域 -->
+      <div class="theoryContainer">
+        <div class="left">
+          <div class="typeList">
+            <h1><img src="./img/bt-class.png" alt="">理论分类</h1>
+            <div class="type" :class="{ active: theory === item.name }" @click="changeTheory(item.name)" v-for="item in allTheoryData" :key="item.name">
+              {{ item.name }}
+            </div>
+          </div>
+          <div class="introduce">
+            <h1><img src="./img/bt-good.png" alt="">相关推荐</h1>
+            <div class="item">
+              <img src="./img/bt-img4.png" alt="">
+              <h2>中医经典著作简介</h2>
+              <p>了解《黄帝内经》、《伤寒杂病论》《神农本草经》等中医经典著作的基本…</p>
+            </div>
+            <div class="item">
+              <img src="./img/bt-img5.png" alt="">
+              <h2>常见中药的识别与应用</h2>
+              <p>介绍日常生活中常见中药的性味归经、功效主治及使用方法，帮助您正确认识和…</p>
+            </div>
+            <a href="">查看全部</a>
+          </div>
+        </div>
+        <div class="right">
+          <div class="title">
+            <h1>{{ theoryitem.name }}</h1>
+            <p>{{ theoryitem.summary }}</p>
+          </div>
+          <div class="content">
+            {{ theoryitem.content }}
+          </div>
+        </div>
+      </div>
+
+      <!-- 课程分类区域 -->
+      <div class="classContainer">
+        <div class="left">
+          <div class="typeList">
+            <h1><img src="./img/bt-list.png" alt="">精品课程</h1>
+            <div class="type" :class="{ active: classNow === item.name }" @click="changeClass(item.name)" v-for="item in classData" :key="item.name">
+              {{ item.name }} <span>{{ item.quantity }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <div class="itemBox">
+            <div class="item" v-for="item in paginatedItems" :key="item.id">
+              <img :src="getImageUrl(item.img)" alt="">
+              <div class="title">{{ item.title }}</div>
+              <div class="act">{{ item.act }}</div>
+              <p>{{ item.summary }}</p>
+              <button>了解详情</button>
+            </div>
+          </div>
+          <div class="page">
+            <!-- 分页组件 -->
+            <el-pagination layout="prev, pager, next, jumper" :total="classitem.data.length" :page-size="6" v-model:current-page="currentPage" background />
+          </div>
+        </div>
+      </div>
+    </main>
+    <div id="footer-placeholder"></div>
+  </div>
+  <script src="./js/basicThoery.js"></script>
+</body>
+<script>
+  (function () {
+    const componentPath = '../../components/footer/footer.html';
+    const componentBasePath = componentPath.substring(0, componentPath.lastIndexOf('/') + 1);
+    fetch(componentPath)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.text();
+      })
+      .then(html => {
+        const adjustedHtml = html.replace(/(href|src)="\.\//g, `$1="${componentBasePath}`);
+
+        document.getElementById('footer-placeholder').innerHTML = adjustedHtml;
+      })
+      .catch(error => {
+        console.error('There has been a problem with your fetch operation:', error);
+      });
+  })();
+  (function () {
+    const componentPath = '../../components/nav/nav.html';
+    const componentBasePath = componentPath.substring(0, componentPath.lastIndexOf('/') + 1);
+    fetch(componentPath)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.text();
+      })
+      .then(html => {
+        const adjustedHtml = html.replace(/(href|src)="\.\//g, `$1="${componentBasePath}`);
+
+        document.getElementById('nav').innerHTML = adjustedHtml;
+      })
+      .catch(error => {
+        console.error('There has been a problem with your fetch operation:', error);
+      });
+  })();
+</script>
+
+</html>

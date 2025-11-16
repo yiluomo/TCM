@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+  width: 100%;
+  background: #F5F5DC;
+  padding-bottom: 30px;
+}
+.nav a{
+    text-decoration: none;
+    color:inherit;
+}
+.nav {
+    width: 100%;
+    height: 98px;
+    background-color: #D9C6B0;
+    display: block;
+    display: flex;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.nav .logo {
+    width: 275px;
+    height: 60px;
+    margin: 16px 72px;
+    margin-top: 22px;
+}
+
+.nav ul {
+    width: 54%;
+    height: 100%;
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-list>li{
+    width: 12.5%;
+    margin: 0 10px;
+    color:rgba(17, 17, 17, 1);
+    text-align: center;
+    font-size: 14px;
+    height:98px;
+    line-height: 98px;
+    cursor: pointer;
+    position: relative;
+    background-image: url(../img/nav-line.png);
+    background-repeat: no-repeat;
+    background-position: bottom 28px center;
+    overflow: visible;
+}
+.nav-list li:hover .submenu{
+    cursor: pointer;
+    max-height: 1000px; /* 或者一个足够大的值，确保内容完全显示 */
+    opacity: 1; /* 完全显示 */
+    visibility: visible;
+}
+.nav-list>li.active {
+    color: rgba(42, 92, 69, 1);
+}
+
+.nav li .arow {
+    position: absolute;
+    top: 47px;
+    right: 0px;
+    width: 0;
+    height: 0;
+    border: 4px solid;
+    border-color:  #111111 transparent transparent transparent;
+}
+
+
+.nav .search{
+    width: 50px;
+    height: 50px;
+    margin: auto 72px;
+}
+.nav .text{
+    position: absolute;
+    right: -1%;
+    width: 227px;
+    height: 62px;
+    margin-top: 22px;
+    margin-right: 50px;
+    justify-content: center;
+    align-items: center;
+    color: #9E2A2B;
+}
+
+.nav .up span{
+    font-size: 21px;
+    margin: 0 10px;
+}
+.nav .imgHead{
+    width: 20px;
+    height: 20px;
+}
+.nav .down span{
+    font-size: 16px;
+    opacity: 0.6;
+}
+.nav .submenu{
+    display: block; /* 保持 block，但通过 max-height 隐藏 */
+    position: absolute;
+    top: 98px; /* 导航栏的高度 */
+    left: -50%;
+    width: 200%;
+    text-align: center;
+    z-index: 10;
+    color:rgba(35, 119, 77, 1);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    /* 动画相关属性 */
+    max-height: 0; /* 初始高度为0，隐藏内容 */
+    /* overflow: hidden;  */
+    opacity: 0; /* 初始透明度为0，隐藏 */
+    visibility: hidden; /* 初始不可见 */
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out, visibility 0.3s ease-out; /* 定义过渡效果 */
+}
+.nav .submenu li{
+    background-color: rgba(255, 255, 255, 0.80);
+    opacity: 0.8;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+}
+.nav .submenu li:hover{
+    background-color: rgba(42, 92, 69, 1);
+    color: #ffffff;
+}
+/* .submenu li a:hover{
+    color:#ffffff;
+} */

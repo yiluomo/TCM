@@ -1,0 +1,294 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  width: 100%;
+  height: 100%;
+  background-color: #F5F5DC;
+  padding: 1px;
+}
+main .title {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 1px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+main .title h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .title .line {
+  margin: 15px auto;
+  width: 67px;
+  height: 2px;
+  background: #1A3D2E;
+}
+main .title h2 {
+  text-align: center;
+  font-family: Microsoft YaHei, Microsoft YaHei;
+  font-weight: 400;
+  font-size: 12px;
+  color: #B4A580;
+}
+.mainContainer {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 32px 22px;
+  height: 100%;
+  margin-top: 50px;
+  background: #FFFFF5;
+  box-shadow: 0px 4px 16px 0px rgba(232, 214, 179, 0.48);
+  border-radius: 0px 0px 0px 0px;
+}
+.mainContainer .search {
+  height: 85px;
+  background: #FFFFFF;
+  box-shadow: 0px 6px 17px 0px rgba(224, 215, 195, 0.44);
+  border-radius: 0px 0px 0px 0px;
+  display: flex;
+  align-items: center;
+  padding: 20px 25px;
+}
+.mainContainer .search input {
+  height: 46px;
+  flex: 7;
+  border-radius: 8px 8px 8px 8px;
+  border: 1px solid #D2D2D2;
+  padding-left: 15px;
+  margin-right: 20px;
+  background: url('../img/mt_img/search.png') no-repeat;
+  background-position: 10px center;
+  padding-left: 30px;
+}
+.mainContainer .search select {
+  flex: 1;
+  margin-right: 25px;
+  height: 46px;
+  border-radius: 8px 8px 8px 8px;
+  background-color: #FFFFFF;
+  border: 1px solid #D2D2D2;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 14px;
+  color: #8B5A2B;
+  line-height: 20px;
+  font-style: normal;
+  text-transform: none;
+}
+.mainContainer .search .filter {
+  flex: 1;
+  margin-right: 25px;
+  height: 46px;
+  border-radius: 8px 8px 8px 8px;
+  border: 1px solid #D2D2D2;
+  font-family: PingFang SC,
+                PingFang SC;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  font-style: normal;
+  text-transform: none;
+  background: #8B5A2B;
+  color: #FFFFFF;
+}
+.medicalBox {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 13px;
+  row-gap: 27px;
+  margin-top: 30px;
+}
+.medicalBox .medicalItem {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.09);
+  border-radius: 0px 0px 0px 0px;
+}
+.medicalBox .medicalItem h1 {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: bold;
+  font-size: 16px;
+  color: #8B5A2B;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  margin-left: 15px;
+  margin-bottom: 5px;
+}
+.medicalBox .medicalItem p {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 15px;
+  color: #555555;
+  line-height: 27px;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  margin: 0 15px;
+  margin-bottom: 5px;
+}
+.medicalBox .medicalItem p span {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 13px;
+  color: #777777;
+  line-height: 23px;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  margin-right: 15px;
+}
+.medicalBox .medicalItem p img {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.medicalBox .medicalItem button {
+  width: 90%;
+  margin: 20px 15px;
+  padding: 3px 0;
+  background: #966338;
+  border-radius: 0px 0px 0px 0px;
+  font-weight: 400;
+  font-size: 15px;
+  color: #FFFFFF;
+  line-height: 26px;
+  font-style: normal;
+  text-transform: none;
+  border: none;
+}
+.demo-pagination-block {
+  margin: 30px auto;
+  text-align: center;
+}
+.demo-pagination-block .el-pagination {
+  display: flex;
+  justify-content: center;
+}
+.demo-pagination-block .el-pagination .el-pagination__total {
+  color: #666;
+}
+.demo-pagination-block .el-pagination .el-pager li {
+  background-color: transparent;
+  color: #606266;
+  min-width: 32px;
+  height: 32px;
+  line-height: 32px;
+  border-radius: 2px;
+  margin: 0 5px;
+}
+.demo-pagination-block .el-pagination .el-pager li.is-active {
+  background-color: #966338 !important;
+  color: white !important;
+  font-weight: bold;
+}
+.demo-pagination-block .el-pagination .el-pager li:hover {
+  color: #6B4C2B;
+}
+.demo-pagination-block .el-pagination .btn-prev,
+.demo-pagination-block .el-pagination .btn-next {
+  background-color: transparent;
+  color: #606266;
+}
+.demo-pagination-block .el-pagination .btn-prev:hover,
+.demo-pagination-block .el-pagination .btn-next:hover {
+  color: #6B4C2B;
+}
+.demo-pagination-block .el-pagination .el-pagination__jump {
+  color: #606266;
+  background-color: #f6e5c1;
+  padding: 0 12px;
+  margin-left: 10px;
+}
+.demo-pagination-block .el-pagination .el-pagination__jump .el-input__inner {
+  height: 28px;
+  width: 50px;
+}
+.demo-pagination-block .el-pagination .el-pagination__classifier {
+  margin-left: 25px;
+}
+.demo-pagination-block .el-pagination .el-pagination__sizes .el-select .el-input {
+  width: 110px;
+}
+.recipeBox {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 40px;
+  display: flex;
+  gap: 16px;
+}
+.recipeBox .recipeItem {
+  flex: 1;
+}
+.recipeBox .recipeItem .recipe {
+  display: flex;
+  background-color: #f4f7f4;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
+.recipeBox .recipeItem .recipe .recipeImg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.recipeBox .recipeItem .recipe .recipeImg span {
+  font-family: HYCuSong, HYCuSong;
+  font-weight: normal;
+  font-size: 16px;
+  color: #4C3E50;
+}
+.recipeBox .recipeItem .recipeText {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px 0px rgba(232, 214, 179, 0.48);
+}
+.recipeBox .recipeItem .recipeText h2 {
+  font-family: HYCuSong, HYCuSong;
+  font-weight: normal;
+  font-size: 20px;
+  color: #2D5D2A;
+}
+.recipeBox .recipeItem .recipeText p {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 14px;
+  color: #6E5A7C;
+}
+.recipeBox .recipeItem .recipeText div {
+  display: flex;
+  justify-content: space-between;
+}
+.recipeBox .recipeItem .recipeText div span {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 14px;
+  color: #8A6E48;
+}
+.recipeBox .recipeItem .recipeText div a {
+  text-decoration: none;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 14px;
+  color: #48622A;
+}
+.tomore {
+  display: block;
+  width: 160px;
+  margin: 0 auto;
+  margin-top: 30px;
+  height: 45px;
+  background: #2D5D2A;
+  border-radius: 41px 41px 41px 41px;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 14px;
+  color: #FFFFFF;
+  border: none;
+}

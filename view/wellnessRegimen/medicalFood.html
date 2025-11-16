@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../public/vue.global.js"></script>
+    <script src="../../public/element-plus.js"></script>
+    <link rel="stylesheet" href="../../public/elementPlus.css">
+    <link rel="stylesheet" href="./css/breadlink.css">
+    <link rel="stylesheet" href="./css/banner.css">
+    <link rel="stylesheet" href="./css/medical.css">
+
+</head>
+
+<body>
+    <div id="nav"></div>
+    <div id="app">
+        <div class="breadLink">
+            <a href="">首页</a>
+            >
+            <span>养生保健</span>
+            >
+            <a href="">药膳食疗</a>
+        </div>
+        <div class="banner">
+            <div class="textcontainner">
+                <div class="text1">药膳食疗</div>
+                <div class="text2">中药膳食疗以传统中医理论为指导，将药材与食材科学搭配， 达到调理身体、预防疾病、延年益寿的目的。</div>
+            </div>
+        </div>
+        <main>
+            <div class="mainTitle">
+                <h1>按功效分类</h1>
+                <div class="line"></div>
+                <h2>根据不同的调理需求，为您推荐合适的药膳食疗方案</h2>
+            </div>
+            <div class="typeBox">
+                <span v-for="item in medicaltype" :key="item.name" :class="{ active: item.name === activeMedicalType }" @click="changeClass(item.name)">{{ item.name }}</span>
+            </div>
+            <div class="typeContainer">
+                <div class="typeItem" v-for="item in getMedicalType()" :key="item.name">
+                    <img :src="getImageUrl(item.img)" alt="" />
+                    <h1>{{ item.title }}</h1>
+                    <p>{{ item.summary }}</p>
+                    <p>
+                        <span>{{ item.tag }}</span> <img src="./img/mf_img/love.png" alt="" />
+                    </p>
+                </div>
+                <!-- <div class="typeItem">
+          <img src="./img/img2.png" alt="" />
+          <h1>莲子百合粥</h1>
+          <p>清心安神，改善睡眠</p>
+          <p><span>安神助眠</span> <img src="./img/mf_img/love.png" alt="" /></p>
+        </div>
+        <div class="typeItem">
+          <img src="./img/img1.png" alt="" />
+          <h1>绿豆汤</h1>
+          <p>清热解毒，消暑解渴</p>
+          <p><span>清热解毒</span> <img src="./img/mf_img/love.png" alt="" /></p>
+        </div>
+        <div class="typeItem">
+          <img src="./img/img2.png" alt="" />
+          <h1>银耳雪梨汤</h1>
+          <p>滋阴润燥，润肺止咳</p>
+          <p><span>滋阴润燥</span> <img src="./img/mf_img/love.png" alt="" /></p>
+        </div>
+        <div class="typeItem">
+          <img src="./img/img1.png" alt="" />
+          <h1>杜仲腰花</h1>
+          <p>补肾壮阳，强筋健骨</p>
+          <p><span>补肾壮阳</span> <img src="./img/mf_img/love.png" alt="" /></p>
+        </div>
+        <div class="typeItem">
+          <img src="./img/img2.png" alt="" />
+          <h1>四神汤</h1>
+          <p>健脾养胃，祛湿化痰</p>
+          <p><span>健脾养胃</span> <img src="./img/mf_img/love.png" alt="" /></p>
+        </div>
+        <div class="typeItem">
+          <img src="./img/img1.png" alt="" />
+          <h1>红枣桂圆茶</h1>
+          <p>补血益气，改善贫血</p>
+          <p><span>补气养血</span> <img src="./img/mf_img/love.png" alt="" /></p>
+        </div>
+        <div class="typeItem">
+          <img src="./img/img2.png" alt="" />
+          <h1>酸枣仁粥</h1>
+          <p>养心安神，缓解焦虑</p>
+          <p><span>安神助眠</span> <img src="./img/mf_img/love.png" alt="" /></p>
+        </div> -->
+            </div>
+            <!-- <MainTitle title="推荐食疗方法" subTitle="精选经典有效的中药食疗配方，简单易做，适合家庭日常调理" /> -->
+            <div class="mainTitle">
+                <h1>推荐食疗方法</h1>
+                <div class="line"></div>
+                <h2>精选经典有效的中药食疗配方，简单易做，适合家庭日常调理</h2>
+            </div>
+            <div class="madicalBox">
+                <div class="madicalItem">
+                    <img src="./img/mf_img/medical1.png" alt="" />
+                    <h1>当归红枣乌鸡汤</h1>
+                    <p>
+                        乌鸡营养丰富，搭配当归、红枣、枸杞等中药材，具有补血养颜、调经止痛的功效，适合女性日常调理。
+                    </p>
+                    <p>
+                        <span>乌鸦</span>
+                        <span>当归</span>
+                        <span>红枣</span>
+                        <span>增强免疫力</span>
+                    </p>
+                    <h2>
+                        <span><img src="./img/mf_img/clock.png" alt="" />准备时间: 15分钟</span>
+                        <span><img src="./img/mf_img/cook.png" alt="" />烹饪时间: 90分钟</span>
+                    </h2>
+                    <button>查看详细做法</button>
+                </div>
+                <div class="madicalItem">
+                    <img src="./img/mf_img/medical2.png" alt="" />
+                    <h1>莲子百合粥</h1>
+                    <p>
+                        莲子和百合均有养心安神的功效，搭配糯米熬制而成的粥品，口感软糯香甜，适合失眠多梦、心神不宁者食用。
+                    </p>
+                    <p>
+                        <span>莲子</span>
+                        <span>百合</span>
+                        <span>糯米</span>
+                        <span>冰糖</span>
+                    </p>
+                    <h2>
+                        <span><img src="./img/mf_img/clock.png" alt="" />准备时间: 15分钟</span>
+                        <span><img src="./img/mf_img/cook.png" alt="" />烹饪时间: 90分钟</span>
+                    </h2>
+                    <button>查看详细做法</button>
+                </div>
+                <div class="madicalItem">
+                    <img src="./img/mf_img/medical3.png" alt="" />
+                    <h1>山药薏米粥</h1>
+                    <p>
+                        山药健脾养胃，薏米利水消肿，两者搭配煮粥，适合脾胃虚弱、消化不良、体内湿气重者日常调理食用。
+                    </p>
+                    <p>
+                        <span>山药</span>
+                        <span>薏米</span>
+                        <span>糯米</span>
+                        <span>茯苓</span>
+                    </p>
+                    <h2>
+                        <span><img src="./img/mf_img/clock.png" alt="" />准备时间: 15分钟</span>
+                        <span><img src="./img/mf_img/cook.png" alt="" />烹饪时间: 90分钟</span>
+                    </h2>
+                    <button>查看详细做法</button>
+                </div>
+            </div>
+            <div class="mainTitle">
+                <h1>体质养生</h1>
+                <div class="line"></div>
+                <h2>中医将人的体质分为九种类型，每种体质有其独特的特点和相应的养生方法</h2>
+            </div>
+            <!-- <div class="bodyMedical">
+        <div class="item">
+          <h1>平和体质</h1>
+          <p>身体阴阳平衡，面色红润，精力充沛，是最理想的体质。</p>
+          <h2>食疗原则：</h2>
+          <p>饮食均衡，不偏食，不过度食用寒凉或温热食物</p>
+          <a href="">推荐药膳 ></a>
+        </div>
+        <div class="item">
+          <h1>湿热体质</h1>
+          <p>面部油腻，易生痤疮，口苦口臭，大便黏滞，小便黄赤</p>
+          <h2>食疗原则：</h2>
+          <p>清热利湿，忌食辛辣、油腻、甜食，多食清热利湿食物。</p>
+          <a href="">推荐药膳 ></a>
+        </div>
+        <div class="item">
+          <h1>痰湿体质</h1>
+          <p>体型肥胖，面部油脂多，多汗且黏，胸闷，痰多，易困倦。</p>
+          <h2>食疗原则：</h2>
+          <p>健脾利湿，化痰泄浊，少食肥甘厚味，多食健脾利湿食物.</p>
+          <a href="">推荐药膳 ></a>
+        </div>
+        <div class="item">
+          <h1>阳虚体质</h1>
+          <p>怕冷，手足不温，喜欢热饮，易腹泻，精神不振。</p>
+          <h2>食疗原则：</h2>
+          <p>温补阳气，忌食生冷寒凉食物，多食温热性食物。</p>
+          <a href="">推荐药膳 ></a>
+        </div>
+        <div class="item">
+          <h1>阴虚体质</h1>
+          <p>怕热，口干舌燥，手足心热，便秘，睡眠差。</p>
+          <h2>食疗原则：</h2>
+          <p>滋阴润燥，总食辛辣刺激性食物，多食阴食物。</p>
+          <a href="">推荐药膳 ></a>
+        </div>
+        <div class="item">
+          <h1>气虚体质</h1>
+          <p>容易疲劳，气短懒言，易出汗，免疫力低下，易感冒。</p>
+          <h2>食疗原则：</h2>
+          <p>补气健脾，忌食生冷寒凉食物，多食补气食物，</p>
+          <a href="">推荐药膳 ></a>
+        </div>
+      </div> -->
+            <div class="bodyBox">
+                <div class="left">
+                    <div class="type" v-for="item in types" :key="item.name" :class="{ active: item.name === activeType }" @click="activeType = item.name">
+                        {{ item.name }}
+                        <img :src="item.name === activeType ? triangle : triangle1" alt="" />
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="img">
+                        <img :src="getImageUrl(nowtypedata.content.bigimg)" alt="" />
+                    </div>
+                    <div class="content">
+                        <h1>{{ nowtypedata.name }}</h1>
+                        <p>
+                            {{ nowtypedata.content.summary }}
+                        </p>
+                        <h2>养生要点:</h2>
+                        <ul>
+                            <li v-for="item in nowtypedata.content.point" :key="item">
+                                <img src="./img/mf_img/arrow.png" alt="" />{{ item }}
+                            </li>
+                            <!-- <li>
+                <img src="./img/arrow.png" alt="" />适当运动，保持良好心态
+              </li>
+              <li>
+                <img src="./img/arrow.png" alt="" />顺应四季变化调整生活方式
+              </li> -->
+                        </ul>
+                        <img :src="getImageUrl(nowtypedata.content.smallimg)" alt="" />
+                    </div>
+                </div>
+            </div>
+            <div class="expertContainer">
+                <h1>近期专家讲座</h1>
+                <div class="expertBox">
+                    <div class="expertItem">
+                        <div class="title">
+                            <h1>四季养生之道</h1>
+                            <div class="tag">线上</div>
+                        </div>
+                        <p>
+                            王建国教授讲解四季养生的基本原则和具体方法，帮助您顺应自然，健康生活。
+                        </p>
+                        <div>
+                            <img src="./img/mf_img/calender.png" alt="" />2023-07-15 19:00-20:30
+                        </div>
+                        <a href="">预约报名 ></a>
+                    </div>
+                    <div class="expertItem">
+                        <div class="title">
+                            <h1>体质食疗专题</h1>
+                            <div class="tag">线上</div>
+                        </div>
+                        <p>
+                            李淑兰医师详解不同体质的食疗方案，教您通过饮食调理体质，预防疾病。
+                        </p>
+                        <div>
+                            <img src="./img/mf_img/calender.png" alt="" />2023-07-15 19:00-20:30
+                        </div>
+                        <a href="">预约报名 ></a>
+                    </div>
+                    <div class="expertItem">
+                        <div class="title">
+                            <h1>八段锦入门教学</h1>
+                            <div class="tag">线上</div>
+                        </div>
+                        <p>
+                            张明远教授现场教学八段锦基本动作，适合初学者入门，地点:北京中医药大学。
+                        </p>
+                        <div>
+                            <img src="./img/mf_img/calender.png" alt="" />2023-07-15 19:00-20:30
+                        </div>
+                        <a href="">预约报名 ></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mainTitle">
+                <h1>四季养生概述</h1>
+                <div class="line"></div>
+                <h2>中医四季养生理论源于《黄帝内经》，主张“天人相应”，即人体生命活动必须顺应自然界的规律变化。 春生、夏长、秋收、冬藏，是自然界的规律，人也应顺应这个规律来养生。 的目的</h2>
+            </div>
+            <!-- <MainTitle title="四季养生概述" subTitle="中医四季养生理论源于《黄帝内经》，主张“天人相应”，即人体生命活动必须顺应自然界的规律变化。 春生、夏长、秋收、冬藏，是自然界的规律，人也应顺应这个规律来养生。 的目的" /> -->
+            <div class="seasonBox">
+                <div class="seasonItem">
+                    <img src="./img/mf_img/type1.png" alt="" />
+                    <h1>春生</h1>
+                    <p>
+                        春季万物复苏，养生应注重疏肝理气，滋养肝血，保持心情舒畅，适当增加户外活动。
+                    </p>
+                </div>
+                <div class="seasonItem">
+                    <img src="./img/mf_img/type2.png" alt="" />
+                    <h1>夏长</h1>
+                    <p>
+                        夏季阳气旺盛，养生应注重养心防暑，补充水分，保证充足睡眠，避免过度劳累。
+                    </p>
+                </div>
+                <div class="seasonItem">
+                    <img src="./img/mf_img/type3.png" alt="" />
+                    <h1>秋收</h1>
+                    <p>
+                        秋季气候干燥，养生应注重润肺生津，早睡早起，适当进补，增强体质预防感冒。
+                    </p>
+                </div>
+                <div class="seasonItem">
+                    <img src="./img/mf_img/type4.png" alt="" />
+                    <h1>冬藏</h1>
+                    <p>
+                        冬季万物蛰伏，养生应注重补肾藏减少消耗，适当进精，保暖防寒，补为来年储备能量。
+                    </p>
+                </div>
+            </div>
+
+            <!-- <MainTitle title="不同人群的养生方案" subTitle="根据年龄、性别和职业特点，制定针对性的中医养生方案，帮助各类人群保持健康。" /> -->
+            <div class="mainTitle">
+                <h1>不同人群的养生方案</h1>
+                <div class="line"></div>
+                <h2>根据年龄、性别和职业特点，制定针对性的中医养生方案，帮助各类人群保持健康。</h2>
+            </div>
+            <div class="planbox">
+                <div class="planitem">
+                    <div class="planimg">
+                        <img src="./img/mf_img/people1.png" alt="" />
+                    </div>
+                    <div class="plantext">
+                        <h3>儿童养生(0-12岁)</h3>
+                        <p>
+                            儿童处于生长发育阶段，生机旺盛但脏腑娇嫩，养生重点在于促进正常发育，增强免疫力，预防疾病。
+                        </p>
+                        <h4>养生重点:</h4>
+
+                        <p><img src="./img/mf_img/star.png" alt="" />合理喂养，避免过饱过饥</p>
+                        <p>
+                            <img src="./img/mf_img/star.png" alt="" />保证充足睡眠，促进生长激素分泌
+                        </p>
+                        <p><img src="./img/mf_img/star.png" alt="" />适当户外活动，增强体质</p>
+                        <a href="">查看详情方案 ></a>
+                    </div>
+                </div>
+                <div class="planitem">
+                    <div class="planimg">
+                        <img src="./img/mf_img/people2.png" alt="" />
+                    </div>
+                    <div class="plantext">
+                        <h3>青少年养生(13-18岁)</h3>
+                        <p>
+                            青少年处于青春期，生长发育迅速，第二性征出现，养生重点在于均衡营养，合理运动，保持心理健康。
+                        </p>
+                        <h4>养生重点:</h4>
+
+                        <p>
+                            <img src="./img/mf_img/star.png" alt="" />均衡膳食，补充蛋白质和微量元素
+                        </p>
+                        <p><img src="./img/mf_img/star.png" alt="" />保证充足睡眠，避免熬夜</p>
+                        <p><img src="./img/mf_img/star.png" alt="" />适当运动，促进骨骼发育</p>
+                        <a href="">查看详情方案 ></a>
+                    </div>
+                </div>
+                <div class="planitem">
+                    <div class="planimg">
+                        <img src="./img/mf_img/people3.png" alt="" />
+                    </div>
+                    <div class="plantext">
+                        <h3>中年人养生(19-59岁)</h3>
+                        <p>
+                            中年人工作压力大，家庭责任重，身体机能开始下降，养生重点在于预防早衰，调节情绪，防治职业病。
+                        </p>
+                        <h4>养生重点:</h4>
+
+                        <p><img src="./img/mf_img/star.png" alt="" />饮食清淡，控制热量摄入</p>
+                        <p><img src="./img/mf_img/star.png" alt="" />劳逸结合，避免过度劳累</p>
+                        <p><img src="./img/mf_img/star.png" alt="" />定期体检，及早发现问题</p>
+                        <a href="">查看详情方案 ></a>
+                    </div>
+                </div>
+                <div class="planitem">
+                    <div class="planimg">
+                        <img src="./img/mf_img/people4.png" alt="" />
+                    </div>
+                    <div class="plantext">
+                        <h3>老年人养生(60岁以上)</h3>
+                        <p>
+                            老年人各脏腑功能衰退，气血不足，养生重点在于延缓衰老，预防老年病，提高生活质量。
+                        </p>
+                        <h4>养生重点:</h4>
+
+                        <p><img src="./img/mf_img/star.png" alt="" />饮食宜温热细软，易于消化</p>
+                        <p>
+                            <img src="./img/mf_img/star.png" alt="" />适当轻度运动，如散步、太极拳
+                        </p>
+                        <p><img src="./img/mf_img/star.png" alt="" />保持心情舒畅，避免情绪波动</p>
+                        <a href="">查看详情方案 ></a>
+                    </div>
+                </div>
+                <div class="planitem">
+                    <div class="planimg">
+                        <img src="./img/mf_img/people5.png" alt="" />
+                    </div>
+                    <div class="plantext">
+                        <h3>女性养生</h3>
+                        <p>
+                            女性有经、孕、产、乳等特殊生理过程，养生重点在于调理气血，呵护卵巢，预防妇科疾病。
+                        </p>
+                        <h4>养生重点:</h4>
+
+                        <p><img src="./img/mf_img/star.png" alt="" />经期注意保暖，避免劳累</p>
+                        <p>
+                            <img src="./img/mf_img/star.png" alt="" />多食补血食物，如红枣、枸杞、红豆
+                        </p>
+                        <p><img src="./img/mf_img/star.png" alt="" />保持心情愉悦，避免情志内伤</p>
+                        <a href="">查看详情方案 ></a>
+                    </div>
+                </div>
+                <div class="planitem">
+                    <div class="planimg">
+                        <img src="./img/mf_img/people6.png" alt="" />
+                    </div>
+                    <div class="plantext">
+                        <h3>男性养生</h3>
+                        <p>
+                            老年人各脏腑功能衰退，气血不足，养生重点在于延缓衰老，预防老年病，提高生活质量。
+                        </p>
+                        <h4>养生重点:</h4>
+
+                        <p><img src="./img/mf_img/star.png" alt="" />避免过度劳累，节制房事</p>
+                        <p>
+                            <img src="./img/mf_img/star.png" alt="" />适当食用补肾食物，如核桃、黑芝麻
+                        </p>
+                        <p><img src="./img/mf_img/star.png" alt="" />保持良好心态，学会减压</p>
+                        <a href="">查看详情方案 ></a>
+                    </div>
+                </div>
+                <!-- <div class="planitem">
+          <div class="planimg">
+            <img src="./img/img7.png" alt="" />
+          </div>
+          <div class="plantext">
+            <h3>职场人士养生</h3>
+            <p>
+              职场人士长期久坐，工作压力大，易患颈椎腰椎疾病、视力下降、失眠等问题，养生重点在于缓解疲劳，预防职业病。
+            </p>
+            <h4>养生重点:</h4>
+
+            <p>
+              <img src="./img/mf_img/star.png" alt="" />每小时起身活动，缓解久坐疲劳
+            </p>
+            <p><img src="./img/mf_img/star.png" alt="" />注意用眼卫生，定时远眺放松</p>
+            <p><img src="./img/mf_img/star.png" alt="" />学习放松技巧，缓解工作压力</p>
+            <a href="">查看详情方案 ></a>
+          </div>
+        </div> -->
+            </div>
+            <div id="form"></div>
+        </main>
+    </div>
+    <div id="footer-placeholder"></div>
+    </div>
+</body>
+<script type="module" src="./js/medicalFood.js" ></script>
+<script src="../../public/loadComponent.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 加载页脚
+        loadComponent('../../components/footer/footer.html', 'footer-placeholder');
+        // 加载表单
+        loadComponent('../../components/form/form.html', 'form');
+         // 加载导航
+        loadComponent('../../components/nav/nav.html', 'nav');
+    });
+</script>
+</html>

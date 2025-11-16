@@ -1,0 +1,494 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  width: 100%;
+  height: 100%;
+  background: #f5f5dc;
+  border-radius: 0px 0px 0px 0px;
+  padding: 1px;
+}
+.mainTitle {
+  padding: 1px;
+  width: 1200px;
+  margin: 0 auto;
+}
+.mainTitle .line {
+  margin: 16px auto;
+  width: 119px;
+  height: 2px;
+  background: #1a3d2e;
+  border-radius: 0px 0px 0px 0px;
+}
+.mainTitle h1 {
+  margin-top: 30px;
+  font-family: Microsoft YaHei, Microsoft YaHei;
+  font-weight: bold;
+  font-size: 34px;
+  color: #1a3d2e;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+}
+.mainTitle h2 {
+  width: 657px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  font-family: Microsoft YaHei, Microsoft YaHei;
+  font-weight: 400;
+  font-size: 12px;
+  color: #b4a580;
+  line-height: 24px;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+}
+.typeBox {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.typeBox span {
+  height: 45px;
+  line-height: 45px;
+  padding: 0 20px;
+  background: #E6C9AC;
+  border-radius: 51px 51px 51px 51px;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 500;
+  font-size: 18px;
+  color: #FFFFFF;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+  cursor: pointer;
+}
+.typeBox span.active {
+  background: #8B5A2B;
+  color: #fff;
+}
+.typeContainer {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 50px;
+}
+.typeContainer .typeItem {
+  background: #FFFFFF;
+  box-shadow: 0px 3px 12px 0px rgba(232, 214, 179, 0.48);
+  border-radius: 0px 0px 0px 0px;
+  padding-bottom: 1px;
+}
+.typeContainer .typeItem h1 {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: bold;
+  font-size: 16px;
+  color: #8B4513;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  margin: 0 15px;
+  margin-bottom: 5px;
+}
+.typeContainer .typeItem p {
+  margin: 8px 15px;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 13px;
+  color: #888888;
+  line-height: 19px;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.typeContainer .typeItem span {
+  display: inline-block;
+  background: #F5F5DC;
+  border-radius: 3px 3px 3px 3px;
+  padding: 5px 10px;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 11px;
+  color: #555555;
+  line-height: 16px;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  margin-bottom: 5px;
+}
+.madicalBox {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 50px;
+}
+.madicalBox .madicalItem {
+  background: #FFFFFF;
+  box-shadow: 0px 3px 12px 0px rgba(232, 214, 179, 0.48);
+  border-radius: 0px 0px 0px 0px;
+  padding-bottom: 15px;
+}
+.madicalBox .madicalItem h1 {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: bold;
+  font-size: 16px;
+  color: #8B4513;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+.madicalBox .madicalItem p {
+  margin: 0 10px;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 13px;
+  color: #888888;
+  line-height: 19px;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  margin-bottom: 5px;
+}
+.madicalBox .madicalItem p span {
+  display: inline-block;
+  background: #F5F5DC;
+  border-radius: 3px 3px 3px 3px;
+  padding: 5px 10px;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 11px;
+  color: #555555;
+  line-height: 16px;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+.madicalBox .madicalItem h2 {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 14px;
+  color: #888888;
+  line-height: 21px;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+.madicalBox .madicalItem h2 img {
+  margin-right: 5px;
+}
+.madicalBox .madicalItem button {
+  display: block;
+  background-color: #FFFFFF;
+  margin: 0 auto;
+  margin-top: 15px;
+  width: 341px;
+  height: 44px;
+  border-radius: 0px 0px 0px 0px;
+  border: 1px solid #8B4513;
+}
+.bodyMedical {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 50px;
+}
+.bodyMedical .item {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px 0px rgba(232, 214, 179, 0.48);
+  padding: 20px 10px;
+  border-top: 4px solid #8B5A2B;
+}
+.bodyMedical .item h1 {
+  font-size: 20px;
+  color: #8B5A2B;
+  margin-bottom: 10px;
+}
+.bodyMedical .item p {
+  font-size: 16px;
+  color: #888888;
+  margin-bottom: 10px;
+}
+.bodyMedical .item h2 {
+  font-size: 16px;
+  color: #8B5A2B;
+  margin-bottom: 10px;
+}
+.bodyMedical .item a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #8B5A2B;
+}
+.bodyBox {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 13px;
+}
+.bodyBox .left {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+.bodyBox .left .type {
+  width: 318px;
+  height: 64px;
+  background: #E3E3BA;
+  border-radius: 0px 0px 0px 0px;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: bold;
+  font-size: 20px;
+  color: #8A4001;
+  text-align: center;
+  line-height: 64px;
+  border-right: 3px solid #e79d2f;
+  cursor: pointer;
+  position: relative;
+}
+.bodyBox .left .type img {
+  vertical-align: middle;
+  width: 12px;
+  height: 19px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  z-index: 1;
+}
+.bodyBox .left .type.active {
+  background: #8A4001;
+  color: #fff;
+}
+.bodyBox .right {
+  flex: 1;
+  padding: 18px;
+  background: #FFFFFF;
+  display: flex;
+  gap: 14px;
+}
+.bodyBox .right .img {
+  height: 100%;
+}
+.bodyBox .right .img img {
+  width: 100%;
+  height: 100%;
+}
+.bodyBox .right .content {
+  flex: 1;
+  background: #F5F5DC;
+  padding: 18px 23px;
+}
+.bodyBox .right .content h1 {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: bold;
+  font-size: 20px;
+  color: #8B4513;
+  margin-bottom: 13px;
+}
+.bodyBox .right .content p {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 13px;
+  color: #99995B;
+  margin-bottom: 13px;
+}
+.bodyBox .right .content h2 {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: bold;
+  font-size: 16px;
+  color: #8B4513;
+  margin-bottom: 13px;
+}
+.bodyBox .right .content ul {
+  list-style: none;
+}
+.bodyBox .right .content ul li {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 13px;
+  color: #99995B;
+  margin-bottom: 13px;
+}
+.expertContainer {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 16px 30px;
+  background-color: #ffffff;
+  margin-top: 50px;
+}
+.expertContainer h1 {
+  font-family: HYCuSong, HYCuSong;
+  font-weight: normal;
+  font-size: 20px;
+  color: #966338;
+  text-align: center;
+}
+.expertContainer .expertBox {
+  display: flex;
+  gap: 13px;
+  margin-top: 20px;
+}
+.expertContainer .expertBox .expertItem {
+  padding: 23px 12px;
+  border: 1px solid #E3E3BA;
+}
+.expertContainer .expertBox .expertItem .title {
+  display: flex;
+  justify-content: space-between;
+}
+.expertContainer .expertBox .expertItem .title h1 {
+  font-size: 18px;
+}
+.expertContainer .expertBox .expertItem .title .tag {
+  padding: 0 8px;
+  height: 24px;
+  background: #EAF2EA;
+  border-radius: 2px 2px 2px 2px;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 12px;
+  color: #8B4513;
+  line-height: 24px;
+}
+.expertContainer .expertBox .expertItem p {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 14px;
+  margin: 10px 0;
+  color: #9E9E63;
+}
+.expertContainer .expertBox .expertItem div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 12px;
+  color: #ACACAC;
+}
+.expertContainer .expertBox .expertItem a {
+  text-decoration: none;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 12px;
+  color: #618755;
+}
+.seasonBox {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+  gap: 24px;
+  margin-bottom: 88px;
+}
+.seasonBox .seasonItem {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px 0px rgba(232, 214, 179, 0.48);
+  border-radius: 0px 0px 0px 0px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.seasonBox h1 {
+  font-family: HYCuSong, HYCuSong;
+  font-weight: normal;
+  font-size: 20px;
+  color: #966338;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+}
+.seasonBox p {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 16px;
+  color: #555555;
+  line-height: 29px;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+}
+.planbox {
+  width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 50px;
+}
+.planbox .planitem {
+  display: flex;
+  background: #FFFDF9;
+  box-shadow: 0px 4px 16px 0px rgba(235, 232, 210, 0.57);
+  gap: 15px;
+}
+.planbox .planitem .planimg {
+  flex: 1;
+}
+.planbox .planitem .planimg img {
+  height: 100%;
+}
+.planbox .planitem .plantext {
+  padding: 20px 20px 20px 0px;
+}
+.planbox .planitem .plantext h3 {
+  font-family: HYCuSong, HYCuSong;
+  font-weight: normal;
+  font-size: 21px;
+  color: #966338;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+}
+.planbox .planitem .plantext p {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 16px;
+  color: #947272;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.planbox .planitem .plantext p img {
+  margin-right: 10px;
+}
+.planbox .planitem .plantext a {
+  text-decoration: none;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 14px;
+  color: #8B4513;
+  line-height: 21px;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+}

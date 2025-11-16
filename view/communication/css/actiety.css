@@ -1,0 +1,403 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background: #F5F5DC;
+}
+.actiteyContainer {
+  width: 1200px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px 0px rgba(232, 214, 179, 0.48);
+  border-radius: 0px 0px 0px 0px;
+  padding: 20px;
+}
+.actiteyContainer .tagContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.actiteyContainer .tagContainer .left span {
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 5px;
+  background: #F9E8EB;
+  border-radius: 51px 51px 51px 51px;
+  margin-right: 10px;
+}
+.actiteyContainer .tagContainer .left span img {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.actiteyContainer .tagContainer .right span {
+  height: 43px;
+  border-radius: 39px 39px 39px 39px;
+  border: 1px solid #C41E3A;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 14px;
+  color: #C41E3A;
+  line-height: 21px;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+}
+.actiteyContainer .tagContainer .right button {
+  height: 43px;
+  border-radius: 39px 39px 39px 39px;
+  border: 1px solid #C41E3A;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 14px;
+  background: #966338;
+  color: #FFFFFF;
+  line-height: 21px;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+}
+.actiteyContainer h1 {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: bold;
+  font-size: 36px;
+  color: #8B5A2B;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  margin: 10px 0;
+}
+.actiteyContainer p {
+  display: flex;
+  align-items: center;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 16px;
+  color: #555555;
+  line-height: 24px;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  margin-bottom: 10px;
+}
+.actiteyContainer p span {
+  display: block;
+  font-size: 14px;
+  margin-right: 20px;
+}
+.actiteyContainer p span img {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+main h2 {
+  font-family: HYCuSong, HYCuSong;
+  font-weight: normal;
+  font-size: 30px;
+  color: #9E2A2B;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+main h2 img {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+h3 {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: bold;
+  font-size: 20px;
+  color: #8B5A2B;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  margin-top: 10px;
+}
+.actityBox {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  gap: 20px;
+}
+.actityBox .left {
+  width: 793px;
+}
+.actityBox .left .actityInfo {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px 0px rgba(232, 214, 179, 0.48);
+  border-radius: 0px 0px 0px 0px;
+  padding: 20px;
+}
+.actityBox .left .actityInfo p {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 16px;
+  color: #555555;
+  line-height: 29px;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+}
+.actityBox .left .actityInfo ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+.actityBox .left .actityInfo ul li {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 16px;
+  color: #555555;
+  line-height: 29px;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  margin-bottom: 10px;
+}
+.actityBox .left .actityContent {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px 0px rgba(232, 214, 179, 0.48);
+  border-radius: 0px 0px 0px 0px;
+  padding: 20px;
+  margin-top: 20px;
+}
+.actityBox .left .actityContent .expertBox {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.actityBox .left .actityContent .expertBox .expertItem {
+  flex: 1;
+  background: #F5F5F0;
+  border-radius: 0px 0px 0px 0px;
+  padding: 20px;
+  padding-top: 35px;
+}
+.actityBox .left .actityContent .expertBox .expertItem .img {
+  margin: 0 auto;
+  text-align: center;
+}
+.actityBox .left .actityContent .expertBox .expertItem h3 {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 500;
+  font-size: 20px;
+  color: #333333;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+}
+.actityBox .left .actityContent .expertBox .expertItem p {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 12px;
+  color: #555555;
+  line-height: 18px;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+  margin-top: 5px;
+}
+.actityBox .left .actityContent .expertBox .expertItem p.title {
+  font-size: 16px;
+}
+.actityBox .left .actityContent .imgBox {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.actityBox .left .actityContent .imgBox img {
+  flex: 1;
+  max-height: 140px;
+}
+.actityBox .right {
+  flex: 1;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px 0px rgba(232, 214, 179, 0.48);
+  border-radius: 0px 0px 0px 0px;
+  padding: 20px;
+}
+.actityBox .right div.item {
+  padding: 20px;
+  background: #EAF2EA;
+  border-radius: 9px 9px 9px 9px;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 16px;
+  color: #555555;
+  line-height: 24px;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+}
+.actityBox .right label {
+  display: block;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 16px;
+  color: #555555;
+  line-height: 24px;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  margin-top: 30px;
+}
+.actityBox .right input {
+  width: 100%;
+  padding: 10px;
+  height: 49px;
+  border-radius: 7px 7px 7px 7px;
+  border: 1px solid #AAAAAA;
+  margin-top: 8px;
+}
+.actityBox .right input#agreement {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin: 0;
+  margin-right: 5px;
+}
+.actityBox .right p {
+  margin-top: 10px;
+}
+.actityBox .right textarea {
+  width: 100%;
+  padding: 10px;
+  height: 100px;
+  border-radius: 7px 7px 7px 7px;
+  border: 1px solid #AAAAAA;
+  margin-top: 10px;
+}
+.actityBox .right button {
+  width: 100%;
+  height: 52px;
+  background: #C41E3A;
+  border-radius: 5px 5px 5px 5px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #FFFFFF;
+  line-height: 24px;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+  margin-top: 20px;
+}
+.actityBox .right .link {
+  width: 100%;
+  border-top: 1px solid #D7D7D7;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+.actityBox .right .link h4 {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 18px;
+  color: #555555;
+  line-height: 27px;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+}
+.actityBox .right .link p {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 16px;
+  color: #AAAAAA;
+  line-height: 24px;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  margin-bottom: 15px;
+}
+.actityBox .right .link p img {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.bottom {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+.bottom .goodBox {
+  display: flex;
+  gap: 15px;
+}
+.bottom .goodBox .goodItem {
+  flex: 1;
+  background: #FFFFFF;
+  box-shadow: 0px 3px 13px 0px rgba(232, 214, 179, 0.48);
+  border-radius: 0px 0px 0px 0px;
+}
+.bottom .goodBox .goodItem .img {
+  width: 100%;
+  max-height: 220px;
+}
+.bottom .goodBox .goodItem .img img {
+  width: 100%;
+  height: 100%;
+}
+.bottom .goodBox .goodItem h3 {
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+.bottom .goodBox .goodItem p {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 14px;
+  color: #555555;
+  line-height: 24px;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+.bottom .goodBox .goodItem p img {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin: 0;
+  margin-right: 5px;
+}
+.bottom .goodBox .goodItem p.text {
+  font-size: 16px;
+  display: -webkit-box;
+  /* Webkit内核浏览器专属属性，将元素作为弹性盒子显示 */
+  -webkit-box-orient: vertical;
+  /* 将弹性盒子垂直排列，使得子元素（文本行）垂直堆叠 */
+  -webkit-line-clamp: 2;
+  /* 限制文本显示的最大行数 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.bottom .goodBox .goodItem button {
+  display: block;
+  width: 90%;
+  background-color: #FFFFFF;
+  border-radius: 5px 5px 5px 5px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #C41E3A;
+  border: 1px solid #C41E3A;
+  line-height: 24px;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 5px 0;
+}

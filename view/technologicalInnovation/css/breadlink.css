@@ -1,0 +1,17 @@
+.breadLink a{
+    text-decoration: none;
+   color: #ffffff;/* 移除点击时的轮廓 */
+}
+.breadLink {
+    position: absolute;
+    color: #ffffff;
+    top: 123px;
+    left: 360px;
+    height: 22px;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    font-style: normal;
+    opacity: 0.8;
+    z-index: 1;
+}

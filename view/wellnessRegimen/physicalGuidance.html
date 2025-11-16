@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../public/vue.global.js"></script>
+    <script src="../../public/element-plus.js"></script>
+    <link rel="stylesheet" href="../../public/elementPlus.css">
+    <link rel="stylesheet" href="./css/breadlink.css">
+    <link rel="stylesheet" href="./css/banner.css">
+    <link rel="stylesheet" href="./css/physicalGuidance.css">
+    <script src="./js/nav.js"></script>
+</head>
+
+<body>
+    <div id="nav"></div>
+    <div id="app">
+         <div class="breadLink">
+            <a href="">首页</a>
+            >
+            <span>养生保健</span>
+            >
+            <a href="">运动引导</a>
+        </div>
+        <div class="banner">
+            <div class="textcontainner">
+                <div class="text1">运动引导</div>
+                <div class="text2">中药膳食疗以传统中医理论为指导，将药材与食材科学搭配， 达到调理身体、预防疾病、延年益寿的目的。</div>
+            </div>
+        </div>
+        <main>
+            <!-- <MainTitle title="传统中医运动疗法" subTitle="中医运动疗法源于古代养生之道，通过调节身形、呼吸和心神，达到疏通经络、调和气血、平衡阴阳的目的。" /> -->
+            <div class="mainTitle">
+                <h1>传统中医运动疗法</h1>
+                <div class="line"></div>
+                <h2>中医运动疗法源于古代养生之道，通过调节身形、呼吸和心神，达到疏通经络、调和气血、平衡阴阳的目的。</h2>
+            </div>
+            <div class="methodContainer">
+                <div class="methodItem">
+                    <img src="./img/pg_img/img1.png" alt="" />
+                    <h3>太极拳</h3>
+                    <p>站立是运动中的基础动作，保持站立可以增强身体的力量和耐力。</p>
+                    <p>
+                        <span>适合各年龄段</span>
+                        <a href="">了解详情 &nbsp;></a>
+                    </p>
+                </div>
+                <div class="methodItem">
+                    <img src="./img/pg_img/img2.png" alt="" />
+                    <h3>八段锦</h3>
+                    <p>
+                        由八个动作组成，针对不同脏腑和经络进行调理，能增强体质，预防疾病，特别适合办公室人群
+                    </p>
+                    <p>
+                        <span>10分钟/套</span>
+                        <a href="">了解详情 &nbsp;></a>
+                    </p>
+                </div>
+                <div class="methodItem">
+                    <img src="./img/pg_img/img3.png" alt="" />
+                    <h3>五禽戏</h3>
+                    <p>
+                        模仿虎、鹿、熊、猿、鸟五种动物的动作，能增强脏腑功能，提高免疫力，改善身体灵活性。
+                    </p>
+                    <p>
+                        <span>增强体质</span>
+                        <a href="">了解详情 &nbsp;></a>
+                    </p>
+                </div>
+            </div>
+            <!-- <MainTitle title="精选功法练习指南" subTitle="专业中医师精心设计的练习方案，适合不同人群和健康需求，循序渐进，安全有效。" /> -->
+            <div class="mainTitle">
+                <h1>精选功法练习指南</h1>
+                <div class="line"></div>
+                <h2>专业中医师精心设计的练习方案，适合不同人群和健康需求，循序渐进，安全有效。</h2>
+            </div>
+            <div class="typeBox">
+                <span v-for="type in exerciseTypes" :key="type.name" :class="{ active: activeType === type.name }" @click="changeType(type.name)">
+                    {{ type.name }}
+                </span>
+            </div>
+            <div class="LiveBox">
+                <div class="video">
+                    <video :src="currentExercise.video" controls></video>
+                </div>
+                <div class="text">
+                    <div class="left">
+                        <h3>{{ currentExercise.name }}</h3>
+                        <p>
+                            {{ currentExercise.description }}
+                        </p>
+                    </div>
+                    <div class="right">
+                        <img src="./img/pg_img/star.png" alt="">收藏
+                    </div>
+                </div>
+            </div>
+            <div class="pathBox">
+                <div v-for="step in currentExercise.steps" :key="step.num" class="pathItem">
+                    <div class="num">{{ step.num }}</div>
+                    <h1>{{ step.title }}</h1>
+                    <p>{{ step.description }}</p>
+                    <img :src="step.image" alt="">
+                </div>
+            </div>
+            <button class="skill">查看完整八段锦教程 <img src="./img/pg_img/arrow.png" alt=""></button>
+            <!-- <MainTitle title="中医专家建议" subTitle="来自资深中医师的专业指导，帮助您正确练习，避免误区，获得最佳效果。" /> -->
+            <div class="mainTitle">
+                <h1>中医专家建议</h1>
+                <div class="line"></div>
+                <h2>来自资深中医师的专业指导，帮助您正确练习，避免误区，获得最佳效果。</h2>
+            </div>
+            <div class="doctorBox">
+                <div class="doctor">
+                    <div class="info">
+                        <img src="./img/pg_img/avatar1.png" alt="" />
+                        <div class="text">
+                            <h1>张明教授</h1>
+                            <p>北京中医药大学</p>
+                        </div>
+                    </div>
+                    <em>“四李养生的关键在于顺应自然变化，
+                        春滋养肝、夏养心、秋养肺、冬养，每个季节都有其重点。但需注意，养生应因人而异，不可一概而论。”</em>
+                    <img src="./img/pg_img/doctorStar.png" alt="">
+                </div>
+                <div class="doctor">
+                    <div class="info">
+                        <img src="./img/pg_img/avatar2.png" alt="" />
+                        <div class="text">
+                            <h1>李华医师</h1>
+                            <p>上海中医医院</p>
+                        </div>
+                    </div>
+                    <em>"饮食调理在四季养生中至关重要。春季直甘温，夏季宜甘凉，秋李宜滋润，冬季直温补。合理搭配饮食，才能更好地适应季节变化。</em>
+                    <img src="./img/pg_img/doctorStar.png" alt="">
+                </div>
+                <div class="doctor">
+                    <div class="info">
+                        <img src="./img/pg_img/avatar1.png" alt="" />
+                        <div class="text">
+                            <h1>王丽医师</h1>
+                            <p>广州中医药研究院</p>
+                        </div>
+                    </div>
+                    <em>运动养生应顺应四季特点，
+                        春季宜散步踏青，夏李宣清晨锻炼，秋李宜登高望远，冬季宜室内静养。适度运动才能达到养生效果，不可过度劳累。</em>
+                    <img src="./img/pg_img/doctorStar.png" alt="">
+                </div>
+            </div>
+            <div class="liveLink">
+                <div class="left">
+                    <h1>专家在线直播教学</h1>
+                    <h2>每周三、周六晚7点，中医专家在线直播教学，实时指导动作，解答疑问。</h2>
+                    <button style="background: #FFFFFF; color: rgba(50, 128, 54, 1);">查看直播日程</button>
+                    <button>开启提醒</button>
+                </div>
+                <div class="right">
+                    <img src="./img/pg_img/live1.png" alt="" class="liveImg1">
+                    <img src="./img/pg_img/live2.png" alt="" class="liveImg2">
+                </div>
+            </div>
+            <div id="form"></div>
+        </main>
+    </div>
+    <div id="footer-placeholder"></div>
+    <div id="form"></div>
+</body>
+
+<script src="./js/physicalGuidance.js"></script>
+<script src="../../public/loadComponent.js"></script>
+<script>
+    // 统一使用loadComponent方法加载所有组件
+    loadComponent('../../components/nav/nav.html', 'nav');
+    loadComponent('../../components/footer/footer.html', 'footer-placeholder');
+    loadComponent('../../components/form/form.html', 'form');
+</script>
+</html>

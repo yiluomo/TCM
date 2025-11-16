@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="./form.css">
+<div class="formContainer">
+  <div class="left">
+    <h4>预约中医诊断</h4>
+    <p>填写右侧表单预约中医诊断服务，我们的客服人员将尽快与您联系确认详情。您也可以直接拨打我们的预约电话进行预约。</p>
+    <div>
+      <div class="img"><img src="./img/form_phone.png" alt=""></div>
+      <div>
+        <span>电话咨询</span>
+        <p>400-123-4567</p>
+      </div>
+    </div>
+    <div>
+      <div class="img"><img src="./img/form_email.png" alt=""></div>
+      <div>
+        <span>门诊时间</span>
+        <p>周一至周五:8:00-18:00</p>
+        <p>周六至周日:9:00-18:00</p>
+      </div>
+    </div>
+    <div>
+      <div class="img"><img src="./img/form_address.png" alt=""></div>
+      <div>
+        <span>诊所地址</span>
+        <p>河南省郑州市金水区东风路</p>
+      </div>
+    </div>
+    <img src="./img/form_qCode1.png" alt="">
+  </div>
+  <form action="" method="post" target="submitFrame" class="myForm">
+    <div class="input_box">
+      <div class="flexBox">
+        <label for="name">姓名</label>
+        <input type="text" id="name" name="name" class="userName" placeholder="请输入你的姓名" required>
+      </div>
+      <div class="flexBox">
+        <label for="mobile">手机号码</label>
+        <input type="text" id="phone" name="mobile" class="tel" placeholder="请输入你的手机号码" required>
+      </div>
+    </div>
+    <label for="message">预约专家</label>
+    <select name="zhuangtai" id="type" required>
+      <option value="0">请选择专家</option>
+      <option value="2">张明远 </option>
+      <option value="3">李淑华</option>
+      <option value="4">王建国</option>
+    </select>
+    <div class="input_box">
+      <div class="flexBox">
+        <label for="date">预约日期</label>
+        <input type="date" id="date" name="date" class="date" placeholder="yyyy/mm/日" required>
+      </div>
+    </div>
+    <label for="yixiang">主要症状</label>
+    <textarea type="textarea" class="textarea" name="yixiang" id="requext" placeholder="请简要描述您的主要症状或健康问题"></textarea>
+    <input type="submit" value="提交资讯" id="submit" class="commit_btn">
+  </form>
+</div>
+<script type="module" src="./form.js"></script>

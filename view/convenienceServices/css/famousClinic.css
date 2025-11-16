@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  padding: 1px;
+  background: #F5F5DC;
+}
+main .title {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 1px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+main .title h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .title .line {
+  margin: 15px auto;
+  width: 67px;
+  height: 2px;
+  background: #1A3D2E;
+}
+main .title h2 {
+  text-align: center;
+  font-family: Microsoft YaHei, Microsoft YaHei;
+  font-weight: 400;
+  font-size: 12px;
+  color: #B4A580;
+}
+main .clinicBox {
+  width: 1200px;
+  margin: 0 auto;
+}
+main .clinicBox .tagContainer {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+main .clinicBox .tagContainer .tag {
+  padding: 10px 20px;
+  background: #E6C9AC;
+  border-radius: 48px 48px 48px 48px;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 500;
+  font-size: 17px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+main .clinicBox .tagContainer .tag.active {
+  background: #8B5A2B;
+  color: #fff;
+}
+main .clinicBox .clinicContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+main .clinicBox .clinicContainer .clinicItem {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px 0px rgba(232, 214, 179, 0.48);
+}
+main .clinicBox .clinicContainer .clinicItem h1 {
+  display: flex;
+  justify-content: space-between;
+  margin: 11px;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: bold;
+  font-size: 20px;
+  color: #8B4513;
+}
+main .clinicBox .clinicContainer .clinicItem p {
+  margin: 11px;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 16px;
+  color: #888888;
+}
+main .clinicBox .clinicContainer .clinicItem p > span {
+  margin-right: 5px;
+  padding: 3px 5px;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 12px;
+  color: #8B5A2B;
+  display: inline-block;
+  background: #F3EEE9;
+  border-radius: 2px 2px 2px 2px;
+}
+main .clinicBox .clinicContainer .clinicItem button {
+  display: block;
+  width: 90%;
+  margin: 11px auto;
+  height: 41px;
+  border: 1px solid #8B4513;
+  background: #FFFFFF;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 14px;
+  color: #8B4513;
+}
+main .clinicBox > button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 80px;
+  background: #8B5A2B;
+  border-radius: 6px 6px 6px 6px;
+  padding: 10px 20px;
+  color: #fff;
+  border: none;
+}
+main .userReduce {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 1px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+main .userReduce .item {
+  flex: 1;
+  background: #FFFFFF;
+  padding: 10px;
+}
+main .userReduce .item .userInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+main .userReduce .item .userInfo .text {
+  flex: 1;
+  font-family: HYCuSong, HYCuSong;
+  font-weight: normal;
+  font-size: 16px;
+  color: #8B5A2B;
+}
+main .userReduce .item .userInfo span {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 11px;
+  color: #555555;
+}
+main .userReduce .item p {
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 400;
+  font-size: 13px;
+  color: #444444;
+  margin: 10px 0;
+}

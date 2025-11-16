@@ -1,0 +1,36 @@
+.banner {
+    width: 100%;
+    height: 562px;
+    background-image: url('../img/banner.png');
+    background-size: 100% 100%;
+    padding: 1px;
+}
+
+@font-face {
+    font-family: YouSheBiaoTiHei;
+    src: url('../font/YouSheBiaoTiHeiTi-2.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.banner h1 {
+    width: 1200px;
+    margin: 0px auto;
+    margin-top: 200px;
+    font-family: HYCuSong, HYCuSong;
+    font-weight: normal;
+    font-size: 70px;
+    color: #FFFFFF;
+    text-align: right;
+}
+
+.banner h2 {
+    width: 1200px;
+    margin: 0px auto;
+    margin-top: 20px;
+    font-family: HYCuSong, HYCuSong;
+    font-weight: normal;
+    font-size: 26px;
+    color: #FFFFFF;
+    text-align: right;
+}
